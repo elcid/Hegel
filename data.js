@@ -194,7 +194,7 @@ const hegelData = [
       {
         "target": "Qualität / Grenze",
         "text": "Das Fürsichsein ist das Resultat der Dialektik von Etwas und",
-        "targetId": "s08"
+        "targetId": "s05"
       },
       {
         "target": "Eins / Vieles",
@@ -293,7 +293,7 @@ const hegelData = [
       {
         "target": "Qualität / Quantität",
         "text": "Das Maß ist deren synthetische Einheit.",
-        "targetId": "s12"
+        "targetId": "s10"
       },
       {
         "target": "Absolute Indifferenz",
@@ -407,7 +407,7 @@ const hegelData = [
       {
         "target": "Wesen / Schein",
         "text": "Die Reflexion ist die Bewegung vom Schein zum Grund.",
-        "targetId": "w02"
+        "targetId": "w03"
       },
       {
         "target": "Grund",
@@ -433,12 +433,12 @@ const hegelData = [
       {
         "target": "Unterschied",
         "text": "Die Identität schlägt in den Unterschied um.",
-        "targetId": "w12"
+        "targetId": "w04"
       },
       {
         "target": "Widerspruch",
         "text": "Beide sind im Widerspruch vereint.",
-        "targetId": "w13"
+        "targetId": "w04"
       },
       {
         "target": "Grund",
@@ -448,7 +448,7 @@ const hegelData = [
       {
         "target": "Identität / Widerspruch",
         "text": "Der Unterschied vermittelt zwischen beiden.",
-        "targetId": "w11"
+        "targetId": "w04"
       },
       {
         "target": "Grund",
@@ -458,7 +458,7 @@ const hegelData = [
       {
         "target": "Identität / Unterschied",
         "text": "Diese sind die Momente, die im Widerspruch zusammenfallen.",
-        "targetId": "w13"
+        "targetId": "w04"
       },
       {
         "target": "Grund",
@@ -713,7 +713,7 @@ const hegelData = [
       {
         "target": "Idee",
         "text": "Der Begriff, der sich in der Objektivität realisiert, wird zur Idee.",
-        "targetId": "b09"
+        "targetId": "b07"
       },
       {
         "target": "Urteil / Schluß",
@@ -802,7 +802,7 @@ const hegelData = [
       {
         "target": "Idee",
         "text": "Die Einheit von Begriff und Objektivität ist die Idee.",
-        "targetId": "b09"
+        "targetId": "b07"
       }
     ]
   },
@@ -818,12 +818,12 @@ const hegelData = [
       {
         "target": "Idee",
         "text": "Die ausgeführte Teleologie geht in die Idee über.",
-        "targetId": "b09"
+        "targetId": "b07"
       },
       {
         "target": "Leben",
         "text": "Das Leben ist die unmittelbare Form der Idee — innere Zweckmäßigkeit.",
-        "targetId": "b10"
+        "targetId": "b08"
       }
     ]
   },
@@ -839,7 +839,7 @@ const hegelData = [
       {
         "target": "Begriff / Objektivität",
         "text": "Die Idee ist deren absolute Einheit.",
-        "targetId": "b09"
+        "targetId": "b07"
       },
       {
         "target": "Sein / Wesen / Begriff",
@@ -865,12 +865,12 @@ const hegelData = [
       {
         "target": "Idee",
         "text": "Erste, unmittelbare Gestalt der Idee.",
-        "targetId": "b09"
+        "targetId": "b07"
       },
       {
         "target": "Erkennen",
         "text": "Das Leben stirbt und geht ins Erkennen über — der Geist erhebt sich über",
-        "targetId": "b11"
+        "targetId": "b09"
       }
     ]
   },
@@ -886,12 +886,12 @@ const hegelData = [
       {
         "target": "Leben",
         "text": "Das Erkennen geht aus dem Leben hervor.",
-        "targetId": "b10"
+        "targetId": "b08"
       },
       {
         "target": "Absolute Idee",
         "text": "Die Einheit des theoretischen und praktischen Erkennens.",
-        "targetId": "b12"
+        "targetId": "b10"
       }
     ]
   },
@@ -912,12 +912,12 @@ const hegelData = [
       {
         "target": "Alle vorhergehenden Begriffe",
         "text": "Sie sind aufgehobene Momente der absoluten Idee.",
-        "targetId": "b12"
+        "targetId": "b10"
       },
       {
         "target": "Methode",
         "text": "Die Methode ist das Bewusstsein der Form der inneren Selbstbewegung",
-        "targetId": "b12"
+        "targetId": "b10"
       }
     ]
   }
