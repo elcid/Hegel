@@ -215,11 +215,11 @@ mainProg.forEach(e => {
   if (!p1 || !p2) return;
   const sc = hegelData.find(c => c.id === e.source);
   edgeG.append('path').attr('d', spiralPath(p1, p2)).attr('fill', 'none')
-    .attr('stroke', sc ? bc[sc.book].stroke : '#999').attr('stroke-width', 3).attr('stroke-opacity', 0.7)
+    .attr('stroke', sc ? bc[sc.book].stroke : '#777').attr('stroke-width', 3.5).attr('stroke-opacity', 0.9)
     .attr('stroke-linecap', 'round').style('cursor', 'pointer')
     .on('click', function(ev) { ev.stopPropagation(); showRelPopup(e); })
-    .on('mouseover', function(ev) { d3.select(this).attr('stroke-width', 5.5).attr('stroke-opacity', 1); showTT(ev, e.text); })
-    .on('mouseout', function() { d3.select(this).attr('stroke-width', 3).attr('stroke-opacity', 0.7); hideTT(); });
+    .on('mouseover', function(ev) { d3.select(this).attr('stroke-width', 6).attr('stroke-opacity', 1); showTT(ev, e.text); })
+    .on('mouseout', function() { d3.select(this).attr('stroke-width', 3.5).attr('stroke-opacity', 0.9); hideTT(); });
 });
 
 // Cross edges
@@ -227,11 +227,11 @@ crossEdges.forEach(e => {
   const p1 = posMap[e.source], p2 = posMap[e.target];
   if (!p1 || !p2) return;
   edgeG.append('path').attr('d', spiralPath(p1, p2)).attr('fill', 'none')
-    .attr('stroke', '#bbb').attr('stroke-width', 1).attr('stroke-opacity', 0.3)
-    .attr('stroke-dasharray', '4 3').attr('stroke-linecap', 'round').style('cursor', 'pointer')
+    .attr('stroke', '#888').attr('stroke-width', 1.3).attr('stroke-opacity', 0.45)
+    .attr('stroke-dasharray', '5 4').attr('stroke-linecap', 'round').style('cursor', 'pointer')
     .on('click', function(ev) { ev.stopPropagation(); showRelPopup(e); })
-    .on('mouseover', function(ev) { d3.select(this).attr('stroke', '#555').attr('stroke-width', 2.5).attr('stroke-opacity', 0.7).attr('stroke-dasharray', '6 4'); showTT(ev, e.text); })
-    .on('mouseout', function() { d3.select(this).attr('stroke', '#bbb').attr('stroke-width', 1).attr('stroke-opacity', 0.3).attr('stroke-dasharray', '4 3'); hideTT(); });
+    .on('mouseover', function(ev) { d3.select(this).attr('stroke', '#333').attr('stroke-width', 2.8).attr('stroke-opacity', 0.8).attr('stroke-dasharray', '7 5'); showTT(ev, e.text); })
+    .on('mouseout', function() { d3.select(this).attr('stroke', '#888').attr('stroke-width', 1.3).attr('stroke-opacity', 0.45).attr('stroke-dasharray', '5 4'); hideTT(); });
 });
 
 // Nodes
@@ -258,8 +258,8 @@ nodeSel.on('mouseover', function(ev, d) {
   .on('mouseout', function() {
     d3.select(this).select('circle').attr('r', 18).attr('stroke-width', 2.5);
     edgeG.selectAll('path').each(function(ed) {
-      if (ed && mainProg.includes(ed)) d3.select(this).attr('stroke-opacity', 0.7).attr('stroke-width', 3);
-      else if (ed && crossEdges.includes(ed)) d3.select(this).attr('stroke-opacity', 0.3).attr('stroke-width', 1);
+      if (ed && mainProg.includes(ed)) d3.select(this).attr('stroke-opacity', 0.9).attr('stroke-width', 3.5);
+      else if (ed && crossEdges.includes(ed)) d3.select(this).attr('stroke-opacity', 0.45).attr('stroke-width', 1.3);
     });
     hideTT();
   });
