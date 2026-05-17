@@ -288,7 +288,7 @@ const hegelData = [
     "bookName": "Seinslogik",
     "position": "Dritter Abschnitt („Das Maß“).",
     "quote": "„Das Maß ist die qualitative Quantität; es ist das unmittelbare Qualitative der Quantität, die Einheit von Qualität und Quantität, in der die Quantität selbst qualitativ bestimmt ist.“",
-    "definition": "Das Maß ist die Wahrheit von Qualität und Quantität — die Quantität, die\nzugleich qualitativ bedeutsam ist. Jedes Ding hat ein Maß: innerhalb gewisser Grenzen kann die\nQuantität sich ändern, ohne die Qualität zu verändern; wird die Grenze überschritten, schlägt\ndie Qualität um (Knotenlinie).",
+    "definition": "Das Maß ist die Wahrheit von Qualität und Quantität — die Quantität, die\nzugleich qualitativ bedeutsam ist. Jedes Ding hat ein Maß: innerhalb gewisser Grenzen kann die\nQuantität sich ändern, ohne die Qualität zu verändern; wird die Grenze überschritten, schlägt\ndie Qualität um. Diese Umschlagspunkte bilden eine *Knotenlinie von Maßverhältnissen*\n(z.B. Wasser → Eis → Dampf). Das absolute Hinausgehen über das Maß ist das *Maßlose*,\nin dem das Maß zugrunde geht und der Übergang zum Wesen sich vorbereitet.",
     "crossRefs": [
       {
         "target": "Qualität / Quantität",
@@ -296,25 +296,25 @@ const hegelData = [
         "targetId": "s12"
       },
       {
+        "target": "Absolute Indifferenz",
+        "text": "Der letzte Umschlagspunkt vor dem Übergang ins Wesen.",
+        "targetId": "s13"
+      },
+      {
         "target": "Wesen",
         "text": "Das Maßlose und der Umschlag der Maße führen zum *Werden des Wesens* — über",
         "targetId": "w01"
-      },
-      {
-        "target": "Knotenlinie",
-        "text": "Die Reihe qualitativer Sprünge bei quantitativer Kontinuität.",
-        "targetId": "s13"
       }
     ]
   },
   {
     "id": "s13",
-    "name": "KNOTENLINIE / MASSLOSES / INDIFFERENZ",
+    "name": "ABSOLUTE INDIFFERENZ",
     "book": "seinslogik",
     "bookName": "Seinslogik",
-    "position": "Dritter Abschnitt, Zweites und Drittes Kapitel.",
-    "quote": "",
-    "definition": "Die *Knotenlinie* ist die Abfolge qualitativer Zustände, die durch rein\nquantitative Änderung umschlagen (z.B. Wasser → Eis → Dampf). Das *Maßlose* ist das absolute\nHinausgehen über das Maß. Die *absolute Indifferenz* ist das Worin, in dem alle Bestimmungen\ngleichgültig sind — sie ist der letzte Übergangspunkt zum Wesen.",
+    "position": "Drittes Kapitel des Maß-Abschnitts („Das Werden des Wesens“), A.",
+    "quote": "„Die Indifferenz aber, welche die absolute genannt werden kann, ist, die durch die Negation aller Bestimmtheiten des Seyns, der Qualität und Quantität und deren zunächst unmittelbaren Einheit, des Maaßes, sich mit sich zur einfachen Einheit zusammenschließt.“",
+    "definition": "Die absolute Indifferenz ist die letzte Bestimmung des Seins, ehe dieses zum\nWesen wird — sie erreicht es aber noch nicht. Sie ist die vollendete Gleichgültigkeit gegen\nalle Bestimmungen: Qualität und Quantität, und selbst deren Einheit (das Maß) sind in ihr\naufgehoben. Als reine, unterschiedslose Einheit ist sie der Umschlagspunkt, an dem das Sein\nin das Wesen *umschlägt*. Hegel diskutiert an dieser Stelle auch Spinozas Substanz, die als\nIndifferenz missverstanden werden kann.",
     "crossRefs": [
       {
         "target": "Wesen",
@@ -322,9 +322,19 @@ const hegelData = [
         "targetId": "w01"
       },
       {
+        "target": "Maß",
+        "text": "Die Aufhebung des Maßes führt zur absoluten Indifferenz.",
+        "targetId": "s12"
+      },
+      {
         "target": "Werden",
-        "text": "Wie das Werden aus dem Widerspruch von Sein und Nichts, so das Wesen aus dem",
+        "text": "Wie das Werden aus dem Widerspruch von Sein und Nichts, so geht das Wesen",
         "targetId": "s03"
+      },
+      {
+        "target": "Substanz",
+        "text": "Die absolute Indifferenz ähnelt der spinozistischen Substanz, bleibt aber",
+        "targetId": "w08"
       }
     ]
   },

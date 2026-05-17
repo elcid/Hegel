@@ -247,29 +247,40 @@ hinausweist.
 **Definition:** Das Maß ist die Wahrheit von Qualität und Quantität — die Quantität, die
 zugleich qualitativ bedeutsam ist. Jedes Ding hat ein Maß: innerhalb gewisser Grenzen kann die
 Quantität sich ändern, ohne die Qualität zu verändern; wird die Grenze überschritten, schlägt
-die Qualität um (Knotenlinie).
+die Qualität um. Diese Umschlagspunkte bilden eine *Knotenlinie von Maßverhältnissen*
+(z.B. Wasser → Eis → Dampf). Das absolute Hinausgehen über das Maß ist das *Maßlose*,
+in dem das Maß zugrunde geht und der Übergang zum Wesen sich vorbereitet.
 
 **Querverweise:**
 - → **Qualität / Quantität**: Das Maß ist deren synthetische Einheit.
+- → **Absolute Indifferenz**: Der letzte Umschlagspunkt vor dem Übergang ins Wesen.
 - → **Wesen**: Das Maßlose und der Umschlag der Maße führen zum *Werden des Wesens* — über
   die absolute Indifferenz.
-- → **Knotenlinie**: Die Reihe qualitativer Sprünge bei quantitativer Kontinuität.
 
 ---
 
-### KNOTENLINIE / MASSLOSES / INDIFFERENZ
+### ABSOLUTE INDIFFERENZ
 
-**Position:** Dritter Abschnitt, Zweites und Drittes Kapitel.
+> *„Die Indifferenz aber, welche die absolute genannt werden kann, ist, die durch die Negation
+> aller Bestimmtheiten des Seyns, der Qualität und Quantität und deren zunächst unmittelbaren
+> Einheit, des Maaßes, sich mit sich zur einfachen Einheit zusammenschließt.“*
 
-**Definition:** Die *Knotenlinie* ist die Abfolge qualitativer Zustände, die durch rein
-quantitative Änderung umschlagen (z.B. Wasser → Eis → Dampf). Das *Maßlose* ist das absolute
-Hinausgehen über das Maß. Die *absolute Indifferenz* ist das Worin, in dem alle Bestimmungen
-gleichgültig sind — sie ist der letzte Übergangspunkt zum Wesen.
+**Position:** Drittes Kapitel des Maß-Abschnitts („Das Werden des Wesens“), A.
+
+**Definition:** Die absolute Indifferenz ist die letzte Bestimmung des Seins, ehe dieses zum
+Wesen wird — sie erreicht es aber noch nicht. Sie ist die vollendete Gleichgültigkeit gegen
+alle Bestimmungen: Qualität und Quantität, und selbst deren Einheit (das Maß) sind in ihr
+aufgehoben. Als reine, unterschiedslose Einheit ist sie der Umschlagspunkt, an dem das Sein
+in das Wesen *umschlägt*. Hegel diskutiert an dieser Stelle auch Spinozas Substanz, die als
+Indifferenz missverstanden werden kann.
 
 **Querverweise:**
 - → **Wesen**: Die absolute Indifferenz ist der unmittelbare *Übergang in das Wesen*.
-- → **Werden**: Wie das Werden aus dem Widerspruch von Sein und Nichts, so das Wesen aus dem
-  Widerspruch von Qualität und Quantität.
+- → **Maß**: Die Aufhebung des Maßes führt zur absoluten Indifferenz.
+- → **Werden**: Wie das Werden aus dem Widerspruch von Sein und Nichts, so geht das Wesen
+  aus der Auflösung des Maßes in der absoluten Indifferenz hervor.
+- → **Substanz**: Die absolute Indifferenz ähnelt der spinozistischen Substanz, bleibt aber
+  in der Sphäre des Seins.
 
 ---
 
@@ -751,7 +762,8 @@ entlässt sich in die Natur.
 | **Idee** | Begriff, Objektivität, Leben, Erkennen, Absolute Idee |
 | **Identität** | Unterschied, Widerspruch, Grund |
 | **Kausalität** | Substanz, Wechselwirkung, Grund |
-| **Maß** | Qualität, Quantität, Wesen |
+| **Absolute Indifferenz** | Wesen, Maß, Werden, Substanz |
+| **Maß** | Qualität, Quantität, Wesen, Absolute Indifferenz |
 | **Nichts** | Sein, Werden, Dasein |
 | **Objektivität** | Begriff, Mechanismus, Chemismus, Teleologie, Idee |
 | **Qualität** | Dasein, Quantität, Maß |

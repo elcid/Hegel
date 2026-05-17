@@ -18,7 +18,6 @@ graph TD
         Quantitaet([Quantität])
         Quantum([Quantum · Zahl · Grad])
         Mass([Maß])
-        Knotenlinie([Knotenlinie])
         Indifferenz([Absolute Indifferenz])
     end
 
@@ -71,8 +70,7 @@ graph TD
     Eins --> Quantitaet
     Quantitaet --> Quantum
     Quantum --> Mass
-    Mass --> Knotenlinie
-    Knotenlinie --> Indifferenz
+    Mass --> Indifferenz
     Indifferenz ==>|Übergang in| Wesen
 
     %% ========== HAUPTGANG: Wesenslogik ==========
@@ -122,7 +120,6 @@ graph TD
     Quantitaet -.-> Fuersichsein
     Mass -.-> Qualitaet
     Mass -.-> Quantitaet
-    Knotenlinie -.-> Mass
     Indifferenz -.-> Wesen
 
     %% ========== QUERVERWEISE: Wesenslogik intern ==========
@@ -190,7 +187,7 @@ graph TD
     classDef begriffs fill:#e1d5e7,stroke:#9673a6,color:#000
     classDef uebergang fill:#fff2cc,stroke:#d6b656,color:#000
 
-    class Sein,Nichts,Werden,Dasein,Qualitaet,Etwas,Endlichkeit,Unendlichkeit,Fuersichsein,Eins,Quantitaet,Quantum,Mass,Knotenlinie,Indifferenz seins
+    class Sein,Nichts,Werden,Dasein,Qualitaet,Etwas,Endlichkeit,Unendlichkeit,Fuersichsein,Eins,Quantitaet,Quantum,Mass,Indifferenz seins
     class Wesen,Schein,Reflexion,Identitaet,Unterschied,Widerspruch,Grund,Existenz,Erscheinung,Gesetz,GanzesTeile,Kraft,AeuInneres,Wirklichkeit,Absolute,Substanz,Kausalitaet,Wechselwirkung wesens
     class Begriff,AllgBesEinz,Urteil,Schluss,Objektivitaet,Mechanismus,Chemismus,Teleologie,Idee,Leben,Erkennen,AbsoluteIdee begriffs
     class Werden,Wesen,Begriff,AbsoluteIdee uebergang
