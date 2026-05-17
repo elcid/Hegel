@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hegel · Wissenschaft der Logik — Begriffslexikon</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --seins: #dae8fc; --seins-border: #6c8ebf; --seins-dark: #2b4d7a;
+  --wesens: #d5e8d4; --wesens-border: #82b366; --wesens-dark: #3d6b2e;
+  --begriffs: #e1d5e7; --begriffs-border: #9673a6; --begriffs-dark: #5a3a6e;
+  --bg: #f8f5f0; --card-bg: #fff; --text: #333; --muted: #777;
+  --shadow: 0 1px 4px rgba(0,0,0,.08);
+}
+body { font-family: 'DejaVu Serif', Georgia, 'Times New Roman', serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+header { background: #1a1a2e; color: #e0d6c2; padding: 2rem 1.5rem; text-align: center; }
+header h1 { font-size: 1.8rem; font-weight: 400; letter-spacing: .03em; }
+header p { font-size: .9rem; opacity: .7; margin-top: .3rem; }
+.container { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
+.diagram { text-align: center; margin-bottom: 2rem; }
+.diagram img { max-width: 100%; height: auto; border-radius: 6px; box-shadow: var(--shadow); }
+.diagram a { display: inline-block; margin-top: .5rem; font-size: .85rem; color: var(--muted); }
+.grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; }
+@media (max-width: 1100px) { .grid { grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; } }
+
+/* Book column */
+.book-col { display: flex; flex-direction: column; gap: .6rem; }
+.book-title { font-size: 1rem; font-weight: 600; padding: .6rem 1rem; border-radius: 6px 6px 0 0; text-align: center; letter-spacing: .05em; }
+.book-seins .book-title { background: var(--seins); color: var(--seins-dark); border: 1px solid var(--seins-border); }
+.book-wesens .book-title { background: var(--wesens); color: var(--wesens-dark); border: 1px solid var(--wesens-border); }
+.book-begriffs .book-title { background: var(--begriffs); color: var(--begriffs-dark); border: 1px solid var(--begriffs-border); }
+
+/* Concept card */
+.card { background: var(--card-bg); border-radius: 6px; box-shadow: var(--shadow); overflow: hidden; cursor: pointer; transition: box-shadow .15s; border-left: 3px solid transparent; }
+.card:hover { box-shadow: 0 2px 10px rgba(0,0,0,.12); }
+.book-seins .card { border-left-color: var(--seins-border); }
+.book-wesens .card { border-left-color: var(--wesens-border); }
+.book-begriffs .card { border-left-color: var(--begriffs-border); }
+.card-header { padding: .7rem 1rem; display: flex; align-items: center; gap: .5rem; }
+.card-name { font-size: .95rem; font-weight: 600; flex: 1; }
+.card-arrow { font-size: .8rem; color: var(--muted); transition: transform .2s; }
+.card.expanded .card-arrow { transform: rotate(180deg); }
+
+/* Card expanded detail */
+.card-body { display: none; padding: 0 1rem 1rem; font-size: .88rem; border-top: 1px solid #eee; }
+.card.expanded .card-body { display: block; }
+.card-body .label { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: .6rem 0 .2rem; }
+.card-body .quote { font-style: italic; color: #444; border-left: 2px solid #ccc; padding-left: .8rem; margin: .3rem 0; }
+.card-body .block { margin-bottom: .4rem; }
+.card-body a.crossref { display: inline-block; margin: .15rem .3rem; padding: .15rem .5rem; font-size: .82rem; border-radius: 4px; text-decoration: none; color: #fff; }
+.book-seins .card-body a.crossref { background: var(--seins-dark); }
+.book-wesens .card-body a.crossref { background: var(--wesens-dark); }
+.book-begriffs .card-body a.crossref { background: var(--begriffs-dark); }
+.card-body a.crossref:hover { opacity: .85; }
+
+.highlight { animation: hl 1.5s ease-out; }
+@keyframes hl { 0% { box-shadow: 0 0 0 4px rgba(150,115,166,.5); } 100% { box-shadow: var(--shadow); } }
+
+footer { text-align: center; padding: 3rem 1.5rem; font-size: .75rem; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Hegel · Wissenschaft der Logik</h1>
+  <p>Begriffslexikon mit Querverweisen — interaktiv</p>
+</header>
+
+<div class="container">
+
+<div class="diagram">
+  <img src="Hegel-Querverweise.png" alt="Dialektische Gesamtbewegung — Mermaid-Diagramm" loading="lazy">
+  <a href="Hegel-Querverweise.md" target="_blank">Mermaid-Quelltext</a> ·
+  <a href="Hegel-Querverweise.pdf" target="_blank">PDF</a> ·
+  <a href="Hegel-Begriffslexikon.md" target="_blank">Lexikon Markdown</a> ·
+  <a href="Hegel-Begriffslexikon.pdf" target="_blank">Lexikon PDF</a>
+</div>
+
+<div class="grid" id="grid">
+  <!-- Filled by JS -->
+</div>
+
+</div>
+
+<footer>
+  Quellen: G.W.F. Hegel, Wissenschaft der Logik I &amp; II (Project Gutenberg).<br>
+  Zitate in Originalorthographie („Seyn“, „Daseyn“, „Urtheil“).<br>
+  Erstellt mit DeepSeek · 2026
+</footer>
+
+<script src="data.js"></script>
+<script>
+// Build the three columns
+const books = [
+  { key: 'seinslogik', cls: 'seins', title: 'Erstes Buch: Die Lehre vom Sein' },
+  { key: 'wesenslogik', cls: 'wesens', title: 'Zweites Buch: Die Lehre vom Wesen' },
+  { key: 'begriffslogik', cls: 'begriffs', title: 'Drittes Buch: Die Lehre vom Begriff' }
+];
+
+const grid = document.getElementById('grid');
+const conceptMap = {}; // id -> DOM element
+
+for (const book of books) {
+  const concepts = hegelData.filter(c => c.book === book.key);
+  if (!concepts.length) continue;
+
+  const col = document.createElement('div');
+  col.className = `book-col book-${book.cls}`;
+
+  const title = document.createElement('div');
+  title.className = 'book-title';
+  title.textContent = book.title;
+  col.appendChild(title);
+
+  for (const c of concepts) {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.id = c.id;
+
+    // Header
+    const header = document.createElement('div');
+    header.className = 'card-header';
+    const nameSpan = document.createElement('span');
+    nameSpan.className = 'card-name';
+    nameSpan.textContent = c.name;
+    header.appendChild(nameSpan);
+    const arrow = document.createElement('span');
+    arrow.className = 'card-arrow';
+    arrow.textContent = '▾';
+    header.appendChild(arrow);
+
+    // Body
+    const body = document.createElement('div');
+    body.className = 'card-body';
+
+    if (c.position) {
+      body.appendChild(label('Position'));
+      body.appendChild(block(c.position));
+    }
+    if (c.quote) {
+      body.appendChild(label('Originalzitat'));
+      body.appendChild(quote(c.quote));
+    }
+    if (c.definition) {
+      body.appendChild(label('Definition'));
+      body.appendChild(block(c.definition));
+    }
+    if (c.crossRefs && c.crossRefs.length > 0) {
+      body.appendChild(label('Querverweise'));
+      const refsDiv = document.createElement('div');
+      for (const cr of c.crossRefs) {
+        const a = document.createElement('a');
+        a.className = 'crossref';
+        a.textContent = cr.target;
+        if (cr.targetId) {
+          a.href = '#' + cr.targetId;
+          a.addEventListener('click', (e) => {
+            e.preventDefault();
+            navigateTo(cr.targetId);
+          });
+        } else {
+          a.style.opacity = '0.5';
+        }
+        a.title = cr.text || '';
+        refsDiv.appendChild(a);
+      }
+      body.appendChild(refsDiv);
+    }
+
+    card.appendChild(header);
+    card.appendChild(body);
+
+    // Click to toggle
+    header.addEventListener('click', () => {
+      const wasExpanded = card.classList.contains('expanded');
+      // Close all cards in this column
+      col.querySelectorAll('.card.expanded').forEach(cc => cc.classList.remove('expanded'));
+      if (!wasExpanded) {
+        card.classList.add('expanded');
+        card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+
+    col.appendChild(card);
+    conceptMap[c.id] = card;
+  }
+
+  grid.appendChild(col);
+}
+
+function label(text) {
+  const d = document.createElement('div');
+  d.className = 'label';
+  d.textContent = text;
+  return d;
+}
+function block(text) {
+  const d = document.createElement('div');
+  d.className = 'block';
+  d.textContent = text;
+  return d;
+}
+function quote(text) {
+  const d = document.createElement('div');
+  d.className = 'quote';
+  d.textContent = text;
+  return d;
+}
+
+function navigateTo(id) {
+  const card = conceptMap[id];
+  if (!card) return;
+  // Expand the card
+  card.classList.add('expanded');
+  card.classList.add('highlight');
+  setTimeout(() => card.classList.remove('highlight'), 1600);
+  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// Open first concept on load as demo
+if (hegelData.length > 0) {
+  const first = document.getElementById(hegelData[0].id);
+  if (first) setTimeout(() => first.classList.add('expanded'), 400);
+}
+</script>
+</body>
+</html>
