@@ -1,0 +1,2 @@
+# Hegel
+Wissenschaft der Logik
