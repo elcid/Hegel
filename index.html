@@ -209,22 +209,25 @@ function spiralPath(p1, p2) {
 }
 
 const edgeG = g.append('g');
+const edgeMap = {}; // { 'source-target': { g, hit, vis } }
 // Main edges
 mainProg.forEach(e => {
   const p1 = posMap[e.source], p2 = posMap[e.target];
   if (!p1 || !p2) return;
   const sc = hegelData.find(c => c.id === e.source);
   const eg = edgeG.append('g').style('cursor', 'pointer');
+  const key = e.source + '-' + e.target;
   // invisible wide hit area
-  eg.append('path').attr('d', spiralPath(p1, p2)).attr('fill', 'none')
+  const hit = eg.append('path').attr('d', spiralPath(p1, p2)).attr('fill', 'none')
     .attr('stroke', 'transparent').attr('stroke-width', 14)
     .on('click', function(ev) { ev.stopPropagation(); showRelPopup(e); })
     .on('mouseover', function(ev) { eg.select('.edge-vis').attr('stroke-width', 7).attr('stroke-opacity', 1); showTT(ev, e.text); })
     .on('mouseout', function() { eg.select('.edge-vis').attr('stroke-width', 5).attr('stroke-opacity', 1); hideTT(); });
   // visible line
-  eg.append('path').attr('class', 'edge-vis').attr('d', spiralPath(p1, p2)).attr('fill', 'none')
+  const vis = eg.append('path').attr('class', 'edge-vis').attr('d', spiralPath(p1, p2)).attr('fill', 'none')
     .attr('stroke', sc ? bc[sc.book].stroke : '#777').attr('stroke-width', 5).attr('stroke-opacity', 1)
     .attr('stroke-linecap', 'round').style('pointer-events', 'none');
+  edgeMap[key] = { g: eg, hit, vis, data: e, type: 'main' };
 });
 
 // Cross edges
@@ -232,16 +235,18 @@ crossEdges.forEach(e => {
   const p1 = posMap[e.source], p2 = posMap[e.target];
   if (!p1 || !p2) return;
   const eg = edgeG.append('g').style('cursor', 'pointer');
+  const key = e.source + '-' + e.target;
   // invisible wide hit area
-  eg.append('path').attr('d', spiralPath(p1, p2)).attr('fill', 'none')
+  const hit = eg.append('path').attr('d', spiralPath(p1, p2)).attr('fill', 'none')
     .attr('stroke', 'transparent').attr('stroke-width', 14)
     .on('click', function(ev) { ev.stopPropagation(); showRelPopup(e); })
     .on('mouseover', function(ev) { eg.select('.edge-vis').attr('stroke', '#333').attr('stroke-width', 3.5).attr('stroke-opacity', 0.85); showTT(ev, e.text); })
     .on('mouseout', function() { eg.select('.edge-vis').attr('stroke', '#888').attr('stroke-width', 2).attr('stroke-opacity', 0.55); hideTT(); });
   // visible dashed line
-  eg.append('path').attr('class', 'edge-vis').attr('d', spiralPath(p1, p2)).attr('fill', 'none')
+  const vis = eg.append('path').attr('class', 'edge-vis').attr('d', spiralPath(p1, p2)).attr('fill', 'none')
     .attr('stroke', '#888').attr('stroke-width', 2).attr('stroke-opacity', 0.55)
     .attr('stroke-dasharray', '5 4').attr('stroke-linecap', 'round').style('pointer-events', 'none');
+  edgeMap[key] = { g: eg, hit, vis, data: e, type: 'cross' };
 });
 
 // Nodes — pill shape with text inside
@@ -285,6 +290,37 @@ nodeSel.on('mouseover', function(ev, d) {
   });
 
 nodeSel.on('click', function(ev, d) { ev.stopPropagation(); closeRelPopup(); navigateToCard(d.id); });
+
+// Drag behavior
+const drag = d3.drag()
+  .on('start', function(ev, d) {
+    d3.select(this).select('rect').attr('stroke-width', 3);
+  })
+  .on('drag', function(ev, d) {
+    const idx = principalConcepts.findIndex(c => c.id === d.id);
+    if (idx < 0) return;
+    // Update position
+    positions[idx].x = ev.x;
+    positions[idx].y = ev.y;
+    posMap[d.id] = positions[idx];
+    // Move node
+    d3.select(this).attr('transform', `translate(${ev.x},${ev.y})`);
+    // Update connected edges
+    for (const [key, entry] of Object.entries(edgeMap)) {
+      if (entry.data.source === d.id || entry.data.target === d.id) {
+        const sp = posMap[entry.data.source], tp = posMap[entry.data.target];
+        if (sp && tp) {
+          const dVal = spiralPath(sp, tp);
+          entry.hit.attr('d', dVal);
+          entry.vis.attr('d', dVal);
+        }
+      }
+    }
+  })
+  .on('end', function(ev, d) {
+    d3.select(this).select('rect').attr('stroke-width', 2);
+  });
+nodeSel.call(drag);
 svg.on('click', () => { closeRelPopup(); });
 
 function showTT(ev, text, title) {
