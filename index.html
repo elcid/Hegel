@@ -4,225 +4,308 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hegel · Wissenschaft der Logik — Begriffslexikon</title>
+<script src="https://d3js.org/d3.v7.min.js"></script>
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --seins: #dae8fc; --seins-border: #6c8ebf; --seins-dark: #2b4d7a;
-  --wesens: #d5e8d4; --wesens-border: #82b366; --wesens-dark: #3d6b2e;
-  --begriffs: #e1d5e7; --begriffs-border: #9673a6; --begriffs-dark: #5a3a6e;
-  --bg: #f8f5f0; --card-bg: #fff; --text: #333; --muted: #777;
-  --shadow: 0 1px 4px rgba(0,0,0,.08);
-}
-body { font-family: 'DejaVu Serif', Georgia, 'Times New Roman', serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-header { background: #1a1a2e; color: #e0d6c2; padding: 2rem 1.5rem; text-align: center; }
-header h1 { font-size: 1.8rem; font-weight: 400; letter-spacing: .03em; }
-header p { font-size: .9rem; opacity: .7; margin-top: .3rem; }
-.container { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
-.diagram { text-align: center; margin-bottom: 2rem; }
-.diagram img { max-width: 100%; height: auto; border-radius: 6px; box-shadow: var(--shadow); }
-.diagram a { display: inline-block; margin-top: .5rem; font-size: .85rem; color: var(--muted); }
-.grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; }
-@media (max-width: 1100px) { .grid { grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; } }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--seins:#dae8fc;--seins-border:#6c8ebf;--seins-dark:#2b4d7a;--wesens:#d5e8d4;--wesens-border:#82b366;--wesens-dark:#3d6b2e;--begriffs:#e1d5e7;--begriffs-border:#9673a6;--begriffs-dark:#5a3a6e;--bg:#f8f5f0;--card-bg:#fff;--text:#333;--muted:#777;--shadow:0 1px 4px rgba(0,0,0,.08)}
+body{font-family:'DejaVu Serif',Georgia,'Times New Roman',serif;background:var(--bg);color:var(--text);line-height:1.6}
+header{background:#1a1a2e;color:#e0d6c2;padding:2rem 1.5rem;text-align:center}
+header h1{font-size:1.8rem;font-weight:400;letter-spacing:.03em}
+header p{font-size:.9rem;opacity:.7;margin-top:.3rem}
+.container{max-width:1400px;margin:0 auto;padding:1.5rem}
+#graph-container{position:relative;background:#fff;border-radius:8px;box-shadow:var(--shadow);margin-bottom:.5rem;overflow:hidden}
+#graph-container svg{display:block;width:100%;height:680px;cursor:grab}
+#graph-container svg:active{cursor:grabbing}
+.graph-links{text-align:center;padding:.3rem .5rem 1rem;font-size:.8rem}
+.graph-links a{margin:0 .4rem;color:var(--muted);text-decoration:none}
+.graph-links a:hover{text-decoration:underline}
 
-/* Book column */
-.book-col { display: flex; flex-direction: column; gap: .6rem; }
-.book-title { font-size: 1rem; font-weight: 600; padding: .6rem 1rem; border-radius: 6px 6px 0 0; text-align: center; letter-spacing: .05em; }
-.book-seins .book-title { background: var(--seins); color: var(--seins-dark); border: 1px solid var(--seins-border); }
-.book-wesens .book-title { background: var(--wesens); color: var(--wesens-dark); border: 1px solid var(--wesens-border); }
-.book-begriffs .book-title { background: var(--begriffs); color: var(--begriffs-dark); border: 1px solid var(--begriffs-border); }
+.tooltip{position:absolute;background:rgba(26,26,46,.94);color:#e0d6c2;padding:.6rem .9rem;border-radius:6px;font-size:.82rem;max-width:360px;pointer-events:none;opacity:0;transition:opacity .15s;z-index:10;line-height:1.5}
+.tooltip.visible{opacity:1}
+.tooltip .tt-title{font-weight:700;margin-bottom:.2rem;font-size:.9rem}
 
-/* Concept card */
-.card { background: var(--card-bg); border-radius: 6px; box-shadow: var(--shadow); overflow: hidden; cursor: pointer; transition: box-shadow .15s; border-left: 3px solid transparent; }
-.card:hover { box-shadow: 0 2px 10px rgba(0,0,0,.12); }
-.book-seins .card { border-left-color: var(--seins-border); }
-.book-wesens .card { border-left-color: var(--wesens-border); }
-.book-begriffs .card { border-left-color: var(--begriffs-border); }
-.card-header { padding: .7rem 1rem; display: flex; align-items: center; gap: .5rem; }
-.card-name { font-size: .95rem; font-weight: 600; flex: 1; }
-.card-arrow { font-size: .8rem; color: var(--muted); transition: transform .2s; }
-.card.expanded .card-arrow { transform: rotate(180deg); }
+.relation-popup{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;border-radius:10px;box-shadow:0 8px 40px rgba(0,0,0,.25);padding:1.5rem;max-width:500px;width:90%;z-index:100;display:none}
+.relation-popup.open{display:block}
+.relation-popup .rp-close{float:right;cursor:pointer;font-size:1.3rem;line-height:1;color:var(--muted);background:none;border:none}
+.relation-popup .rp-from{font-size:.8rem;color:var(--muted)}
+.relation-popup .rp-arrow{font-size:1.2rem;margin:0 .4rem;text-align:center}
+.relation-popup .rp-to{font-weight:700}
+.relation-popup .rp-text{margin-top:.8rem;font-size:.92rem;line-height:1.7}
+.relation-popup .rp-goto{display:inline-block;margin-top:.8rem;font-size:.82rem;color:var(--begriffs-dark);cursor:pointer;text-decoration:underline}
+#overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:99}
+#overlay.show{display:block}
 
-/* Card expanded detail */
-.card-body { display: none; padding: 0 1rem 1rem; font-size: .88rem; border-top: 1px solid #eee; }
-.card.expanded .card-body { display: block; }
-.card-body .label { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: .6rem 0 .2rem; }
-.card-body .quote { font-style: italic; color: #444; border-left: 2px solid #ccc; padding-left: .8rem; margin: .3rem 0; }
-.card-body .block { margin-bottom: .4rem; }
-.card-body a.crossref { display: inline-block; margin: .15rem .3rem; padding: .15rem .5rem; font-size: .82rem; border-radius: 4px; text-decoration: none; color: #fff; }
-.book-seins .card-body a.crossref { background: var(--seins-dark); }
-.book-wesens .card-body a.crossref { background: var(--wesens-dark); }
-.book-begriffs .card-body a.crossref { background: var(--begriffs-dark); }
-.card-body a.crossref:hover { opacity: .85; }
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.2rem}
+@media(max-width:1100px){.grid{grid-template-columns:1fr;max-width:600px;margin:0 auto}}
+.book-col{display:flex;flex-direction:column;gap:.6rem}
+.book-title{font-size:1rem;font-weight:600;padding:.6rem 1rem;border-radius:6px 6px 0 0;text-align:center;letter-spacing:.05em}
+.book-seins .book-title{background:var(--seins);color:var(--seins-dark);border:1px solid var(--seins-border)}
+.book-wesens .book-title{background:var(--wesens);color:var(--wesens-dark);border:1px solid var(--wesens-border)}
+.book-begriffs .book-title{background:var(--begriffs);color:var(--begriffs-dark);border:1px solid var(--begriffs-border)}
 
-.highlight { animation: hl 1.5s ease-out; }
-@keyframes hl { 0% { box-shadow: 0 0 0 4px rgba(150,115,166,.5); } 100% { box-shadow: var(--shadow); } }
+.card{background:var(--card-bg);border-radius:6px;box-shadow:var(--shadow);overflow:hidden;cursor:pointer;transition:box-shadow .15s;border-left:3px solid transparent}
+.card:hover{box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.book-seins .card{border-left-color:var(--seins-border)}
+.book-wesens .card{border-left-color:var(--wesens-border)}
+.book-begriffs .card{border-left-color:var(--begriffs-border)}
+.card-header{padding:.7rem 1rem;display:flex;align-items:center;gap:.5rem}
+.card-name{font-size:.95rem;font-weight:600;flex:1}
+.card-arrow{font-size:.8rem;color:var(--muted);transition:transform .2s}
+.card.expanded .card-arrow{transform:rotate(180deg)}
+.card-body{display:none;padding:0 1rem 1rem;font-size:.88rem;border-top:1px solid #eee}
+.card.expanded .card-body{display:block}
+.card-body .label{font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:.6rem 0 .2rem}
+.card-body .quote{font-style:italic;color:#444;border-left:2px solid #ccc;padding-left:.8rem;margin:.3rem 0}
+.card-body .block{margin-bottom:.4rem}
+.card-body a.crossref{display:inline-block;margin:.15rem .3rem;padding:.15rem .5rem;font-size:.82rem;border-radius:4px;text-decoration:none;color:#fff}
+.book-seins .card-body a.crossref{background:var(--seins-dark)}
+.book-wesens .card-body a.crossref{background:var(--wesens-dark)}
+.book-begriffs .card-body a.crossref{background:var(--begriffs-dark)}
+.card-body a.crossref:hover{opacity:.85}
+.highlight{animation:hl 1.5s ease-out}
+@keyframes hl{0%{box-shadow:0 0 0 5px rgba(150,115,166,.5)}100%{box-shadow:var(--shadow)}}
 
-footer { text-align: center; padding: 3rem 1.5rem; font-size: .75rem; color: var(--muted); }
+.legend{display:flex;justify-content:center;gap:1.5rem;padding:.4rem;font-size:.8rem}
+.legend-item{display:flex;align-items:center;gap:.3rem}
+.legend-dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.legend-dot.seins{background:var(--seins-dark)}
+.legend-dot.wesens{background:var(--wesens-dark)}
+.legend-dot.begriffs{background:var(--begriffs-dark)}
+footer{text-align:center;padding:3rem 1.5rem;font-size:.75rem;color:var(--muted)}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Hegel · Wissenschaft der Logik</h1>
-  <p>Begriffslexikon mit Querverweisen — interaktiv</p>
+<h1>Hegel · Wissenschaft der Logik</h1>
+<p>Begriffslexikon mit Querverweisen — interaktives Spiral-Diagramm</p>
 </header>
 
 <div class="container">
 
-<div class="diagram">
-  <img src="Hegel-Querverweise.png" alt="Dialektische Gesamtbewegung — Mermaid-Diagramm" loading="lazy">
-  <a href="Hegel-Querverweise.md" target="_blank">Mermaid-Quelltext</a> ·
-  <a href="Hegel-Querverweise.pdf" target="_blank">PDF</a> ·
-  <a href="Hegel-Begriffslexikon.md" target="_blank">Lexikon Markdown</a> ·
-  <a href="Hegel-Begriffslexikon.pdf" target="_blank">Lexikon PDF</a>
+<div id="graph-container"><svg id="graph"></svg><div class="tooltip" id="tooltip"></div></div>
+<div class="legend">
+<span class="legend-item"><span class="legend-dot seins"></span> Seinslogik</span>
+<span class="legend-item"><span class="legend-dot wesens"></span> Wesenslogik</span>
+<span class="legend-item"><span class="legend-dot begriffs"></span> Begriffslogik</span>
+<span style="font-size:.75rem;color:var(--muted)">| Hover: Verbindungen zeigen · Klick: Definition öffnen · Klick auf Linie: Relationsdetails</span>
+</div>
+<div class="graph-links">
+<a href="Hegel-Querverweise.png" target="_blank">PNG-Diagramm</a>·
+<a href="Hegel-Querverweise.md" target="_blank">Mermaid-Quelltext</a>·
+<a href="Hegel-Querverweise.pdf" target="_blank">Diagramm-PDF</a>·
+<a href="Hegel-Begriffslexikon.md" target="_blank">Lexikon MD</a>·
+<a href="Hegel-Begriffslexikon.pdf" target="_blank">Lexikon PDF</a>
 </div>
 
-<div class="grid" id="grid">
-  <!-- Filled by JS -->
+<div class="grid" id="grid"></div>
+
 </div>
 
+<div id="overlay"></div>
+<div class="relation-popup" id="relationPopup">
+<button class="rp-close" id="rpClose">&times;</button>
+<div class="rp-from" id="rpFrom"></div>
+<div class="rp-arrow">↓</div>
+<div class="rp-to" id="rpTo"></div>
+<div class="rp-text" id="rpText"></div>
+<span class="rp-goto" id="rpGoto">→ Zur Definition</span>
 </div>
 
 <footer>
-  Quellen: G.W.F. Hegel, Wissenschaft der Logik I &amp; II (Project Gutenberg).<br>
-  Zitate in Originalorthographie („Seyn“, „Daseyn“, „Urtheil“).<br>
-  Erstellt mit DeepSeek · 2026
+Quellen: G.W.F. Hegel, Wissenschaft der Logik I &amp; II (Project Gutenberg).<br>
+Zitate in Originalorthographie („Seyn“, „Daseyn“, „Urtheil“). · Erstellt mit DeepSeek · 2026
 </footer>
 
 <script src="data.js"></script>
 <script>
-// Build the three columns
+// ======== SPIRAL GRAPH ========
+const svg = d3.select('#graph');
+const container = document.getElementById('graph-container');
+const tooltip = d3.select('#tooltip');
+const W = container.clientWidth || 1200;
+const H = 680;
+svg.attr('viewBox', `0 0 ${W} ${H}`);
+
+const cx = W / 2, cy = H / 2;
+const bookColors = {
+  seinslogik: { fill: '#dae8fc', stroke: '#6c8ebf', dark: '#2b4d7a' },
+  wesenslogik: { fill: '#d5e8d4', stroke: '#82b366', dark: '#3d6b2e' },
+  begriffslogik: { fill: '#e1d5e7', stroke: '#9673a6', dark: '#5a3a6e' }
+};
+
+// Spiral positions: outer → inner
+const N = hegelData.length;
+const positions = [];
+const outerR = Math.min(cx, cy) - 55;
+const innerR = 45;
+const turns = 2.5;
+for (let i = 0; i < N; i++) {
+  const t = i / (N - 1);
+  const angle = t * turns * 2 * Math.PI - Math.PI / 2;
+  const r = outerR - t * (outerR - innerR);
+  positions.push({ x: cx + r * Math.cos(angle), y: cy + r * Math.sin(angle) });
+}
+
+// Edges: main progression + cross-references
+const byBook = {}; hegelData.forEach(c => { if (!byBook[c.book]) byBook[c.book] = []; byBook[c.book].push(c); });
+const mainProg = [];
+for (const [book, concepts] of Object.entries(byBook)) {
+  concepts.sort((a, b) => a.id.localeCompare(b.id));
+  for (let i = 0; i < concepts.length - 1; i++)
+    mainProg.push({ source: concepts[i].id, target: concepts[i+1].id, text: 'Dialektischer Übergang' });
+}
+mainProg.push({ source: 's13', target: 'w01', text: 'Übergang der Indifferenz ins Wesen' });
+mainProg.push({ source: 'w13', target: 'b01', text: 'Genesis des Begriffs aus der Wechselwirkung' });
+
+const crossEdges = [];
+hegelData.forEach(c => { c.crossRefs.forEach(cr => { if (cr.targetId) crossEdges.push({ source: c.id, target: cr.targetId, text: cr.text || cr.target }); }); });
+const allEdges = [...mainProg.map(e => ({...e, type: 'main'})), ...crossEdges.map(e => ({...e, type: 'cross'}))];
+
+const getPos = id => positions[hegelData.findIndex(c => c.id === id)];
+
+const g = svg.append('g');
+const zoom = d3.zoom().scaleExtent([0.35, 3]).on('zoom', ev => g.attr('transform', ev.transform));
+svg.call(zoom);
+
+// Shadow filter
+const defs = svg.append('defs');
+const filter = defs.append('filter').attr('id', 'sh');
+filter.append('feDropShadow').attr('dx', 0).attr('dy', 1).attr('stdDeviation', 2).attr('flood-opacity', 0.15);
+
+const edgeG = g.append('g');
+// Main edges
+edgeG.selectAll('.em').data(allEdges.filter(e => e.type === 'main')).enter().append('line')
+  .attr('class', 'em').attr('stroke', d => { const s = hegelData.find(c => c.id === d.source); return s ? bookColors[s.book].stroke : '#999'; })
+  .attr('stroke-width', 2.8).attr('stroke-opacity', 0.65)
+  .attr('x1', d => getPos(d.source).x).attr('y1', d => getPos(d.source).y)
+  .attr('x2', d => getPos(d.target).x).attr('y2', d => getPos(d.target).y)
+  .style('cursor', 'pointer')
+  .on('click', function(ev, d) { ev.stopPropagation(); showRelPopup(d); })
+  .on('mouseover', function(ev, d) { d3.select(this).attr('stroke-width', 5).attr('stroke-opacity', 1); showTT(ev, d.text, 'Hauptgang'); })
+  .on('mouseout', function() { d3.select(this).attr('stroke-width', 2.8).attr('stroke-opacity', 0.65); hideTT(); });
+
+// Cross edges
+edgeG.selectAll('.ec').data(allEdges.filter(e => e.type === 'cross')).enter().append('line')
+  .attr('class', 'ec').attr('stroke', '#bbb').attr('stroke-width', 0.7).attr('stroke-opacity', 0.3).attr('stroke-dasharray', '4 3')
+  .attr('x1', d => getPos(d.source).x).attr('y1', d => getPos(d.source).y)
+  .attr('x2', d => getPos(d.target).x).attr('y2', d => getPos(d.target).y)
+  .style('cursor', 'pointer')
+  .on('click', function(ev, d) { ev.stopPropagation(); showRelPopup(d); })
+  .on('mouseover', function(ev, d) { d3.select(this).attr('stroke', '#555').attr('stroke-width', 2).attr('stroke-opacity', 0.7); showTT(ev, d.text, 'Querverweis'); })
+  .on('mouseout', function() { d3.select(this).attr('stroke', '#bbb').attr('stroke-width', 0.7).attr('stroke-opacity', 0.3); hideTT(); });
+
+// Nodes
+const nodeG = g.append('g');
+const nodeSel = nodeG.selectAll('.node').data(hegelData).enter().append('g')
+  .attr('class', 'node').attr('transform', (d, i) => `translate(${positions[i].x},${positions[i].y})`).style('cursor', 'pointer');
+
+nodeSel.append('circle').attr('r', 16).attr('fill', d => bookColors[d.book].fill)
+  .attr('stroke', d => bookColors[d.book].stroke).attr('stroke-width', 2).attr('filter', 'url(#sh)');
+
+nodeSel.append('text').attr('dy', 29).attr('text-anchor', 'middle').attr('font-size', '9px')
+  .attr('font-family', 'DejaVu Sans, Arial, sans-serif').attr('fill', '#444')
+  .text(d => { let n = d.name.split('(')[0].trim().split('·')[0].split('/')[0].trim(); return n.length > 18 ? n.substring(0, 16) + '…' : n; });
+
+nodeSel.on('click', function(ev, d) { ev.stopPropagation(); navigateTo(d.id); })
+  .on('mouseover', function(ev, d) {
+    const conn = allEdges.filter(e => e.source === d.id || e.target === d.id);
+    d3.select(this).select('circle').attr('r', 19).attr('stroke-width', 3);
+    edgeG.selectAll('line').attr('stroke-opacity', e => conn.includes(e) ? 1 : 0.04)
+      .attr('stroke-width', e => conn.includes(e) ? (e.type === 'main' ? 5 : 2.5) : 0.3);
+    showTT(ev, d.definition ? d.definition.substring(0, 160) + '…' : d.name, d.name);
+  })
+  .on('mouseout', function() {
+    d3.select(this).select('circle').attr('r', 16).attr('stroke-width', 2);
+    edgeG.selectAll('.em').attr('stroke-width', 2.8).attr('stroke-opacity', 0.65);
+    edgeG.selectAll('.ec').attr('stroke-width', 0.7).attr('stroke-opacity', 0.3).attr('stroke', '#bbb');
+    hideTT();
+  });
+
+svg.on('click', closeRelPopup);
+
+function showTT(ev, text, title) {
+  const tt = tooltip.html(`<div class="tt-title">${title || ''}</div>${text}`).classed('visible', true);
+  let l = ev.pageX + 15, t = ev.pageY - tt.node().offsetHeight - 10;
+  if (l + tt.node().offsetWidth > window.innerWidth) l = ev.pageX - tt.node().offsetWidth - 15;
+  if (t < 0) t = ev.pageY + 15;
+  tt.style('left', l + 'px').style('top', t + 'px');
+}
+function hideTT() { tooltip.classed('visible', false); }
+
+function showRelPopup(d) {
+  const sc = hegelData.find(c => c.id === d.source), tc = hegelData.find(c => c.id === d.target);
+  document.getElementById('rpFrom').textContent = sc ? sc.name : d.source;
+  document.getElementById('rpTo').textContent = tc ? tc.name : d.target;
+  document.getElementById('rpText').textContent = d.text || '';
+  document.getElementById('rpGoto').onclick = () => { closeRelPopup(); navigateTo(d.target); };
+  document.getElementById('relationPopup').classList.add('open');
+  document.getElementById('overlay').classList.add('show');
+}
+function closeRelPopup() {
+  document.getElementById('relationPopup').classList.remove('open');
+  document.getElementById('overlay').classList.remove('show');
+}
+document.getElementById('rpClose').addEventListener('click', closeRelPopup);
+document.getElementById('overlay').addEventListener('click', closeRelPopup);
+
+window.addEventListener('resize', () => { const nw = container.clientWidth; svg.attr('viewBox', `0 0 ${nw} ${H}`); });
+
+// ======== CARD GRID ========
 const books = [
   { key: 'seinslogik', cls: 'seins', title: 'Erstes Buch: Die Lehre vom Sein' },
   { key: 'wesenslogik', cls: 'wesens', title: 'Zweites Buch: Die Lehre vom Wesen' },
   { key: 'begriffslogik', cls: 'begriffs', title: 'Drittes Buch: Die Lehre vom Begriff' }
 ];
-
 const grid = document.getElementById('grid');
-const conceptMap = {}; // id -> DOM element
+const conceptMap = {};
 
 for (const book of books) {
   const concepts = hegelData.filter(c => c.book === book.key);
   if (!concepts.length) continue;
-
-  const col = document.createElement('div');
-  col.className = `book-col book-${book.cls}`;
-
-  const title = document.createElement('div');
-  title.className = 'book-title';
-  title.textContent = book.title;
-  col.appendChild(title);
-
+  const col = document.createElement('div'); col.className = `book-col book-${book.cls}`;
+  const tdiv = document.createElement('div'); tdiv.className = 'book-title'; tdiv.textContent = book.title; col.appendChild(tdiv);
   for (const c of concepts) {
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.id = c.id;
-
-    // Header
-    const header = document.createElement('div');
-    header.className = 'card-header';
-    const nameSpan = document.createElement('span');
-    nameSpan.className = 'card-name';
-    nameSpan.textContent = c.name;
-    header.appendChild(nameSpan);
-    const arrow = document.createElement('span');
-    arrow.className = 'card-arrow';
-    arrow.textContent = '▾';
-    header.appendChild(arrow);
-
-    // Body
-    const body = document.createElement('div');
-    body.className = 'card-body';
-
-    if (c.position) {
-      body.appendChild(label('Position'));
-      body.appendChild(block(c.position));
-    }
-    if (c.quote) {
-      body.appendChild(label('Originalzitat'));
-      body.appendChild(quote(c.quote));
-    }
-    if (c.definition) {
-      body.appendChild(label('Definition'));
-      body.appendChild(block(c.definition));
-    }
-    if (c.crossRefs && c.crossRefs.length > 0) {
-      body.appendChild(label('Querverweise'));
-      const refsDiv = document.createElement('div');
+    const card = document.createElement('div'); card.className = 'card'; card.id = c.id;
+    const hdr = document.createElement('div'); hdr.className = 'card-header';
+    const ns = document.createElement('span'); ns.className = 'card-name'; ns.textContent = c.name; hdr.appendChild(ns);
+    const ar = document.createElement('span'); ar.className = 'card-arrow'; ar.textContent = '▾'; hdr.appendChild(ar);
+    const body = document.createElement('div'); body.className = 'card-body';
+    if (c.position) { body.appendChild(l('Position')); body.appendChild(b(c.position)); }
+    if (c.quote) { body.appendChild(l('Originalzitat')); body.appendChild(q(c.quote)); }
+    if (c.definition) { body.appendChild(l('Definition')); body.appendChild(b(c.definition)); }
+    if (c.crossRefs && c.crossRefs.length) {
+      body.appendChild(l('Querverweise')); const rd = document.createElement('div');
       for (const cr of c.crossRefs) {
-        const a = document.createElement('a');
-        a.className = 'crossref';
-        a.textContent = cr.target;
-        if (cr.targetId) {
-          a.href = '#' + cr.targetId;
-          a.addEventListener('click', (e) => {
-            e.preventDefault();
-            navigateTo(cr.targetId);
-          });
-        } else {
-          a.style.opacity = '0.5';
-        }
-        a.title = cr.text || '';
-        refsDiv.appendChild(a);
+        const a = document.createElement('a'); a.className = 'crossref'; a.textContent = cr.target;
+        if (cr.targetId) { a.href = '#' + cr.targetId; a.addEventListener('click', e => { e.preventDefault(); navigateTo(cr.targetId); }); }
+        else a.style.opacity = '0.5';
+        a.title = cr.text || ''; rd.appendChild(a);
       }
-      body.appendChild(refsDiv);
+      body.appendChild(rd);
     }
-
-    card.appendChild(header);
-    card.appendChild(body);
-
-    // Click to toggle
-    header.addEventListener('click', () => {
-      const wasExpanded = card.classList.contains('expanded');
-      // Close all cards in this column
+    card.appendChild(hdr); card.appendChild(body);
+    hdr.addEventListener('click', () => {
+      const was = card.classList.contains('expanded');
       col.querySelectorAll('.card.expanded').forEach(cc => cc.classList.remove('expanded'));
-      if (!wasExpanded) {
-        card.classList.add('expanded');
-        card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
+      if (!was) { card.classList.add('expanded'); card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
     });
-
-    col.appendChild(card);
-    conceptMap[c.id] = card;
+    col.appendChild(card); conceptMap[c.id] = card;
   }
-
   grid.appendChild(col);
 }
-
-function label(text) {
-  const d = document.createElement('div');
-  d.className = 'label';
-  d.textContent = text;
-  return d;
-}
-function block(text) {
-  const d = document.createElement('div');
-  d.className = 'block';
-  d.textContent = text;
-  return d;
-}
-function quote(text) {
-  const d = document.createElement('div');
-  d.className = 'quote';
-  d.textContent = text;
-  return d;
-}
+function l(t) { const d = document.createElement('div'); d.className = 'label'; d.textContent = t; return d; }
+function b(t) { const d = document.createElement('div'); d.className = 'block'; d.textContent = t; return d; }
+function q(t) { const d = document.createElement('div'); d.className = 'quote'; d.textContent = t; return d; }
 
 function navigateTo(id) {
-  const card = conceptMap[id];
-  if (!card) return;
-  // Expand the card
-  card.classList.add('expanded');
-  card.classList.add('highlight');
+  closeRelPopup();
+  const card = conceptMap[id]; if (!card) return;
+  card.classList.add('expanded'); card.classList.add('highlight');
   setTimeout(() => card.classList.remove('highlight'), 1600);
   card.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
-
-// Open first concept on load as demo
-if (hegelData.length > 0) {
-  const first = document.getElementById(hegelData[0].id);
-  if (first) setTimeout(() => first.classList.add('expanded'), 400);
-}
+if (hegelData.length) { const f = document.getElementById(hegelData[0].id); if (f) setTimeout(() => f.classList.add('expanded'), 600); }
 </script>
 </body>
 </html>
