@@ -111,6 +111,7 @@ manual = {
     'Wesen / Erscheinung': 'w07', 'Begriff / Objektivität': 'b07',
     'Identität / Unterschied / Widerspruch': 'w04',
     'Identität / Unterschied': 'w04', 'Qualität / Grenze': 's05',
+    'Etwas / Anderes': 's06',
     'Alle vorhergehenden Begriffe': 'b10',
 }
 for k, v in manual.items():

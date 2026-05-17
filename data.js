@@ -110,7 +110,7 @@ const hegelData = [
       {
         "target": "Etwas / Anderes",
         "text": "Das Dasein als in sich reflektiert ist *Etwas*.",
-        "targetId": null
+        "targetId": "s06"
       },
       {
         "target": "Wesen",
