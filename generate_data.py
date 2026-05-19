@@ -105,6 +105,7 @@ manual = {
     'Begriff': 'b01', 'Urteil': 'b03', 'Schluss': 'b04', 'Objektivität': 'b05',
     'Idee': 'b07', 'Leben': 'b08', 'Erkennen': 'b09', 'Absolute Idee': 'b10',
     'Identität': 'w04', 'Unterschied': 'w04', 'Widerspruch': 'w04',
+    'Werden (Seinslogik)': 's03',
     'Methode': 'b10', 'Knotenlinie': 's13',
     'Sein / Wesen': 'b01', 'Sein / Nichts': 's03',
     'Qualität / Quantität': 's10', 'Wesen / Schein': 'w03',

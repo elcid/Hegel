@@ -468,7 +468,7 @@ const hegelData = [
       {
         "target": "Werden (Seinslogik)",
         "text": "Das Werden war der Widerspruch von Sein und Nichts — aber",
-        "targetId": "s01"
+        "targetId": "s03"
       }
     ]
   },
