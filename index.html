@@ -280,25 +280,37 @@ nodeSel.append('text').attr('text-anchor', 'middle').attr('dy', '0.35em')
   .attr('fill', d => bc[d.book].dark).attr('font-weight', '500')
   .text(d => truncName(d));
 
-// Node hover
+// Node hover — highlight connected edges, dim rest
 nodeSel.on('mouseover', function(ev, d) {
     d3.select(this).select('rect').attr('stroke-width', 3)
       .attr('x', d => -pillW(d) / 2 - 2).attr('width', d => pillW(d) + 4);
     edgeG.selectAll('.edge-vis').attr('stroke-opacity', 0.05);
+    for (const [key, entry] of Object.entries(edgeMap)) {
+      if (entry.data.source === d.id || entry.data.target === d.id) {
+        if (entry.type === 'main') {
+          entry.vis.attr('stroke-opacity', 1).attr('stroke-width', 5);
+        } else {
+          entry.vis.attr('stroke', '#333').attr('stroke-width', 2.5).attr('stroke-opacity', 0.8);
+        }
+      }
+    }
     showTT(ev, d.name + (d.definition ? '\n' + d.definition.substring(0, 150) + '…' : ''), '');
   })
   .on('mouseout', function() {
     d3.select(this).select('rect').attr('stroke-width', 2)
       .attr('x', d => -pillW(d) / 2).attr('width', d => pillW(d));
-    // Reset all visible edges
-    edgeG.selectAll('.edge-vis')
-      .attr('stroke-opacity', function() { return d3.select(this).attr('stroke-dasharray') ? 0.55 : 1; })
-      .attr('stroke-width', function() { return d3.select(this).attr('stroke-dasharray') ? 2 : 5; })
-      .attr('stroke', function() { return d3.select(this).attr('stroke-dasharray') ? '#888' : null; });
     hideTT();
+    resetEdges();
   });
 
 nodeSel.on('click', function(ev, d) { ev.stopPropagation(); closeRelPopup(); navigateToCard(d.id); });
+
+function resetEdges() {
+  edgeG.selectAll('.edge-vis')
+    .attr('stroke-opacity', function() { return d3.select(this).attr('stroke-dasharray') ? 0.55 : 1; })
+    .attr('stroke-width', function() { return d3.select(this).attr('stroke-dasharray') ? 2 : 5; })
+    .attr('stroke', function() { return d3.select(this).attr('stroke-dasharray') ? '#888' : null; });
+}
 
 // Drag behavior
 const drag = d3.drag()
@@ -324,7 +336,7 @@ const drag = d3.drag()
     d3.select(this).select('rect').attr('stroke-width', 2);
   });
 nodeSel.call(drag);
-svg.on('click', () => { closeRelPopup(); });
+svg.on('click', () => { resetEdges(); closeRelPopup(); });
 
 function showTT(ev, text, title) {
   const tt = tooltip.html((title ? `<div style="font-weight:700;margin-bottom:.2rem;font-size:.9rem">${title}</div>` : '') + text).classed('visible', true);
