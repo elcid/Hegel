@@ -102,7 +102,7 @@ manual = {
     'Wesen': 'w01', 'Schein': 'w02', 'Reflexion': 'w03', 'Grund': 'w04',
     'Existenz': 'w05', 'Erscheinung': 'w06', 'Wirklichkeit': 'w07',
     'Substanz': 'w08', 'Kausalität': 'w09', 'Wechselwirkung': 'w10',
-    'Begriff': 'b01', 'Urteil': 'b03', 'Schluß': 'b04', 'Objektivität': 'b05',
+    'Begriff': 'b01', 'Urteil': 'b03', 'Schluss': 'b04', 'Objektivität': 'b05',
     'Idee': 'b07', 'Leben': 'b08', 'Erkennen': 'b09', 'Absolute Idee': 'b10',
     'Identität': 'w04', 'Unterschied': 'w04', 'Widerspruch': 'w04',
     'Methode': 'b10', 'Knotenlinie': 's13',

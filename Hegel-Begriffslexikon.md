@@ -3,7 +3,7 @@
 ## Querverweise der Hauptbegriffe in Band I (Seinslogik) und Band II (Wesens- und Begriffslogik)
 
 > **Quellen:** G.W.F. Hegel, *Wissenschaft der Logik* I & II. Die wörtlichen Zitate folgen der
-> Originalorthographie der Project-Gutenberg-Ausgabe („Seyn“, „Daseyn“, „Urtheil“, „Nothwendigkeit“ etc.).
+> Originalorthographie der Project-Gutenberg-Ausgabe, „Dasein“, „Urteil“, „Notwendigkeit“ etc.).
 > Die moderne Schreibung ist in Klammern beigefügt.
 
 ---
@@ -30,9 +30,9 @@ der Objektivität und vollendet sich in der *absoluten Idee*.
 
 ---
 
-### SEIN (SEYN)
+### SEIN
 
-> *„Seyn, reines Seyn, – ohne alle weitere Bestimmung. In seiner unbestimmten Unmittelbarkeit
+> *„Sein, reines Sein, – ohne alle weitere Bestimmung. In seiner unbestimmten Unmittelbarkeit
 > ist es nur sich selbst gleich, und auch nicht ungleich gegen Anderes, hat keine Verschiedenheit
 > innerhalb seiner, noch nach Außen.“*
 
@@ -71,8 +71,8 @@ sondern die reine Negativität, die im Werden hervortritt.
 
 ### WERDEN
 
-> *„Das reine Seyn und das reine Nichts ist also dasselbe. Was die Wahrheit ist, ist weder das
-> Seyn noch das Nichts, sondern daß das Seyn in Nichts und das Nichts in Seyn — nicht übergeht,
+> *„Das reine Sein und das reine Nichts ist also dasselbe. Was die Wahrheit ist, ist weder das
+> Sein noch das Nichts, sondern daß das Sein in Nichts und das Nichts in Sein — nicht übergeht,
 > sondern übergegangen ist. […] Ihre Wahrheit ist also diese Bewegung des unmittelbaren
 > Verschwindens des einen in dem anderen: das Werden.“*
 
@@ -92,11 +92,11 @@ resultiert im Dasein.
 
 ---
 
-### DASEIN (DASEYN)
+### DASEIN
 
-> *„Aus dem Werden geht das Daseyn hervor. Das Daseyn ist das einfache Einsseyn des Seyns
-> und Nichts. […] Daseyn ist, nach seinem Werden, überhaupt Seyn mit einem Nichtseyn, so
-> daß dies Nichtseyn in einfache Einheit mit dem Seyn aufgenommen ist.“*
+> *„Aus dem Werden geht das Dasein hervor. Das Dasein ist das einfache Einsseyn des Seins
+> und Nichts. […] Dasein ist, nach seinem Werden, überhaupt Sein mit einem Nichtseyn, so
+> daß dies Nichtseyn in einfache Einheit mit dem Sein aufgenommen ist.“*
 
 **Position:** Zweites Kapitel, A.
 
@@ -262,7 +262,7 @@ in dem das Maß zugrunde geht und der Übergang zum Wesen sich vorbereitet.
 ### ABSOLUTE INDIFFERENZ
 
 > *„Die Indifferenz aber, welche die absolute genannt werden kann, ist, die durch die Negation
-> aller Bestimmtheiten des Seyns, der Qualität und Quantität und deren zunächst unmittelbaren
+> aller Bestimmtheiten des Seins, der Qualität und Quantität und deren zunächst unmittelbaren
 > Einheit, des Maaßes, sich mit sich zur einfachen Einheit zusammenschließt.“*
 
 **Position:** Drittes Kapitel des Maß-Abschnitts („Das Werden des Wesens“), A.
@@ -291,9 +291,9 @@ Indifferenz missverstanden werden kann.
 
 ### WESEN
 
-> *„Die Wahrheit des Seyns ist das Wesen. […] Die Sprache hat im Zeitwort sein das Wesen in der
+> *„Die Wahrheit des Seins ist das Wesen. […] Die Sprache hat im Zeitwort sein das Wesen in der
 > vergangenen Zeit: »gewesen« behalten; denn das Wesen ist das vergangene, aber zeitlos
-> vergangene Seyn.“*
+> vergangene Sein.“*
 
 **Position:** Zweites Buch, Einleitung (Band II).
 
@@ -314,7 +314,7 @@ des Seins und die Vorbereitung des Begriffs.
 
 ### SCHEIN
 
-> *„Das Seyn ist Schein. Das Sein des Scheins besteht allein in dem Aufgehobenseyn des Seyns,
+> *„Das Sein ist Schein. Das Sein des Scheins besteht allein in dem Aufgehobenseyn des Seins,
 > in seiner Nichtigkeit; […] Er ist das Negative gesetzt als Negatives.“*
 
 **Position:** Erstes Kapitel, B („Das Wesen als Reflexion in ihm selbst“).
@@ -438,7 +438,7 @@ begründete Sein. Das Existierende ist *Ding* — die Einheit von Materie und Fo
 
 ### ERSCHEINUNG
 
-> *„Das Wesen muß erscheinen.“*
+> *„Das Wesen muss erscheinen.“*
 
 **Position:** Zweiter Abschnitt („Die Erscheinung“).
 
@@ -506,7 +506,7 @@ Erscheinungsweise).
 
 ### SUBSTANTIALITÄT
 
-> *„Die Substanz ist schon das reale Wesen, oder das Wesen, insofern es mit dem Seyn vereinigt
+> *„Die Substanz ist schon das reale Wesen, oder das Wesen, insofern es mit dem Sein vereinigt
 > und in Wirklichkeit getreten ist. Der Begriff hat daher die Substanz zu seiner unmittelbaren
 > Voraussetzung.“*
 
@@ -544,7 +544,7 @@ und Wirkung (passive Substanz). Die Ursache geht in der Wirkung zugrunde und wir
 
 ### WECHSELWIRKUNG
 
-> *„Die Wechselwirkung ist das Gesetztseyn der Kausalität, das heißt, die Nothwendigkeit,
+> *„Die Wechselwirkung ist das Gesetztseyn der Kausalität, das heißt, die Notwendigkeit,
 > welche in der Ursache und Wirkung als äußerliche Bestimmungen auseinanderfällt, ist in ihr
 > gesetzt, als Identität beider.“*
 
@@ -571,8 +571,8 @@ Wahrheit der Notwendigkeit.
 ### DER BEGRIFF
 
 > *„Der Begriff ist das Freie, als die sich in sich selbst zurücknehmende Negativität; er ist
-> das Reich der Subjektivität und die absolute Negation des unmittelbaren Seyns, welches er
-> in seiner Wahrheit als die Einheit von Seyn und Wesen setzt.“*
+> das Reich der Subjektivität und die absolute Negation des unmittelbaren Seins, welches er
+> in seiner Wahrheit als die Einheit von Sein und Wesen setzt.“*
 
 **Position:** Drittes Buch, Erster Abschnitt, Erstes Kapitel.
 
@@ -586,7 +586,7 @@ in die Momente: *Allgemeinheit, Besonderheit, Einzelheit*.
 - → **Substanz**: Die Substanz ist die unmittelbare Voraussetzung des Begriffs; der Begriff
   ist die Wahrheit der Substanz.
 - → **Idee**: Der Begriff, der sich in der Objektivität realisiert, wird zur Idee.
-- → **Urteil / Schluß**: Der Begriff *ur-teilt* sich und schließt sich im Schluß wieder zusammen.
+- → **Urteil / Schluss**: Der Begriff *ur-teilt* sich und schließt sich im Schluss wieder zusammen.
 
 ---
 
@@ -603,13 +603,13 @@ in die Momente: *Allgemeinheit, Besonderheit, Einzelheit*.
 **Querverweise:**
 - → **Urteil**: Im Urteil treten diese Momente auseinander (Subjekt = Einzelnes, Prädikat =
   Allgemeines).
-- → **Schluß**: Im Schluß werden sie wieder zusammengeschlossen.
+- → **Schluss**: Im Schluss werden sie wieder zusammengeschlossen.
 
 ---
 
-### DAS URTEIL (URTHEIL)
+### DAS URTEIL
 
-> *„Das Urtheil ist die Diremtion des Begriffs durch sich selbst; diese Einheit ist der Grund,
+> *„Das Urteil ist die Diremtion des Begriffs durch sich selbst; diese Einheit ist der Grund,
 > von welchem es die ursprüngliche Teilung ist.“*
 
 **Position:** Zweites Kapitel.
@@ -623,21 +623,21 @@ Momente in Subjekt und Prädikat. Es durchläuft vier Stufen:
 
 **Querverweise:**
 - → **Begriff**: Das Urteil ist die eigene Diremtion des Begriffs.
-- → **Schluß**: Die Wahrheit des Urteils ist der Schluß.
+- → **Schluss**: Die Wahrheit des Urteils ist der Schluss.
 
 ---
 
-### DER SCHLUSS (SCHLUß)
+### DER SCHLUSS
 
-**Definition:** Der Schluß ist die Wiederherstellung der Einheit des Begriffs aus der Diremtion
+**Definition:** Der Schluss ist die Wiederherstellung der Einheit des Begriffs aus der Diremtion
 des Urteils — das *Vernünftige*. Er hat drei Hauptformen:
-1. **Schluß des Daseins** (E—B—A, Figuren I–IV)
-2. **Schluß der Reflexion** (Allheit, Induktion, Analogie)
-3. **Schluß der Notwendigkeit** (kategorisch, hypothetisch, disjunktiv)
+1. **Schluss des Daseins** (E—B—A, Figuren I–IV)
+2. **Schluss der Reflexion** (Allheit, Induktion, Analogie)
+3. **Schluss der Notwendigkeit** (kategorisch, hypothetisch, disjunktiv)
 
 **Querverweise:**
-- → **Urteil**: Der Schluß ist die Wahrheit des Urteils.
-- → **Objektivität**: Der Schluß der Notwendigkeit geht in die *Objektivität* über.
+- → **Urteil**: Der Schluss ist die Wahrheit des Urteils.
+- → **Objektivität**: Der Schluss der Notwendigkeit geht in die *Objektivität* über.
 
 ---
 
@@ -753,7 +753,7 @@ entlässt sich in die Natur.
 | Begriff | → Verweist auf |
 |---------|---------------|
 | **Absolute Idee** | Idee, Erkennen, Leben, Methode, Begriff, Sein |
-| **Begriff** | Sein, Wesen, Substanz, Urteil, Schluß, Objektivität, Idee |
+| **Begriff** | Sein, Wesen, Substanz, Urteil, Schluss, Objektivität, Idee |
 | **Dasein** | Sein, Nichts, Werden, Qualität, Etwas |
 | **Erscheinung** | Wesen, Existenz, Gesetz, Wirklichkeit |
 | **Existenz** | Grund, Ding, Erscheinung |
@@ -770,12 +770,12 @@ entlässt sich in die Natur.
 | **Quantität** | Qualität, Maß, Wesen |
 | **Reflexion** | Wesen, Schein, Identität, Unterschied, Grund |
 | **Schein** | Wesen, Reflexion, Sein |
-| **Schluß** | Urteil, Begriff, Objektivität |
+| **Schluss** | Urteil, Begriff, Objektivität |
 | **Sein** | Nichts, Werden, Dasein, Wesen, Begriff, Absolute Idee |
 | **Substanz** | Wesen, Akzidenz, Kausalität, Wechselwirkung, Begriff |
 | **Unendlichkeit** | Endlichkeit, Fürsichsein, Begriff |
 | **Unterschied** | Identität, Widerspruch, Gegensatz |
-| **Urteil** | Begriff, Schluß |
+| **Urteil** | Begriff, Schluss |
 | **Wechselwirkung** | Kausalität, Substanz, Begriff |
 | **Werden** | Sein, Nichts, Dasein, Aufheben |
 | **Wesen** | Sein, Reflexion, Schein, Erscheinung, Wirklichkeit, Begriff |
@@ -820,5 +820,5 @@ SEIN ──────────── NICHTS
 ---
 
 *Erstellt auf Grundlage der Project-Gutenberg-Ausgaben der Wissenschaft der Logik, Bände I und II,
-mit systematischer Querverweisanalyse. Die Zitate folgen der Originalorthographie („Seyn“,
-„Daseyn“, „Urtheil“, „Nothwendigkeit“ etc.).*
+mit systematischer Querverweisanalyse. Die Zitate folgen der Originalorthographie,
+„Dasein“, „Urteil“, „Notwendigkeit“ etc.).*

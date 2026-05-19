@@ -2,11 +2,11 @@
 const hegelData = [
   {
     "id": "s01",
-    "name": "SEIN (SEYN)",
+    "name": "SEIN",
     "book": "seinslogik",
     "bookName": "Seinslogik",
     "position": "Erstes Kapitel, A.",
-    "quote": "„Seyn, reines Seyn, – ohne alle weitere Bestimmung. In seiner unbestimmten Unmittelbarkeit ist es nur sich selbst gleich, und auch nicht ungleich gegen Anderes, hat keine Verschiedenheit innerhalb seiner, noch nach Außen.“",
+    "quote": "„Sein, reines Sein, – ohne alle weitere Bestimmung. In seiner unbestimmten Unmittelbarkeit ist es nur sich selbst gleich, und auch nicht ungleich gegen Anderes, hat keine Verschiedenheit innerhalb seiner, noch nach Außen.“",
     "definition": "Das Sein ist die reine, unbestimmte Unmittelbarkeit. Es ist der absolute Anfang der\nLogik — dasjenige, womit der Anfang der Wissenschaft gemacht werden muss. Als das völlig\nBestimmungslose ist es in der Tat dasselbe wie das Nichts.",
     "crossRefs": [
       {
@@ -63,7 +63,7 @@ const hegelData = [
     "book": "seinslogik",
     "bookName": "Seinslogik",
     "position": "Erstes Kapitel, C.",
-    "quote": "„Das reine Seyn und das reine Nichts ist also dasselbe. Was die Wahrheit ist, ist weder das Seyn noch das Nichts, sondern daß das Seyn in Nichts und das Nichts in Seyn — nicht übergeht, sondern übergegangen ist. […] Ihre Wahrheit ist also diese Bewegung des unmittelbaren Verschwindens des einen in dem anderen: das Werden.“",
+    "quote": "„Das reine Sein und das reine Nichts ist also dasselbe. Was die Wahrheit ist, ist weder das Sein noch das Nichts, sondern daß das Sein in Nichts und das Nichts in Sein — nicht übergeht, sondern übergegangen ist. […] Ihre Wahrheit ist also diese Bewegung des unmittelbaren Verschwindens des einen in dem anderen: das Werden.“",
     "definition": "Das Werden ist die Einheit von Sein und Nichts — die Bewegung, in der beide\nunmittelbar ineinander verschwinden. Es hat zwei Momente: *Entstehen* (Übergang von Nichts in\nSein) und *Vergehen* (Übergang von Sein in Nichts). Das Werden hebt sich selbst auf und\nresultiert im Dasein.",
     "crossRefs": [
       {
@@ -90,11 +90,11 @@ const hegelData = [
   },
   {
     "id": "s04",
-    "name": "DASEIN (DASEYN)",
+    "name": "DASEIN",
     "book": "seinslogik",
     "bookName": "Seinslogik",
     "position": "Zweites Kapitel, A.",
-    "quote": "„Aus dem Werden geht das Daseyn hervor. Das Daseyn ist das einfache Einsseyn des Seyns und Nichts. […] Daseyn ist, nach seinem Werden, überhaupt Seyn mit einem Nichtseyn, so daß dies Nichtseyn in einfache Einheit mit dem Seyn aufgenommen ist.“",
+    "quote": "„Aus dem Werden geht das Dasein hervor. Das Dasein ist das einfache Einsseyn des Seins und Nichts. […] Dasein ist, nach seinem Werden, überhaupt Sein mit einem Nichtseyn, so daß dies Nichtseyn in einfache Einheit mit dem Sein aufgenommen ist.“",
     "definition": "Das Dasein ist bestimmtes Sein — Sein mit einer Qualität. Das Nichtsein ist in\ndas Sein aufgenommen, sodass das Ganze in der Form der Unmittelbarkeit erscheint. Etymologisch:\n„Sein an einem gewissen Orte“ (da).",
     "crossRefs": [
       {
@@ -313,7 +313,7 @@ const hegelData = [
     "book": "seinslogik",
     "bookName": "Seinslogik",
     "position": "Drittes Kapitel des Maß-Abschnitts („Das Werden des Wesens“), A.",
-    "quote": "„Die Indifferenz aber, welche die absolute genannt werden kann, ist, die durch die Negation aller Bestimmtheiten des Seyns, der Qualität und Quantität und deren zunächst unmittelbaren Einheit, des Maaßes, sich mit sich zur einfachen Einheit zusammenschließt.“",
+    "quote": "„Die Indifferenz aber, welche die absolute genannt werden kann, ist, die durch die Negation aller Bestimmtheiten des Seins, der Qualität und Quantität und deren zunächst unmittelbaren Einheit, des Maaßes, sich mit sich zur einfachen Einheit zusammenschließt.“",
     "definition": "Die absolute Indifferenz ist die letzte Bestimmung des Seins, ehe dieses zum\nWesen wird — sie erreicht es aber noch nicht. Sie ist die vollendete Gleichgültigkeit gegen\nalle Bestimmungen: Qualität und Quantität, und selbst deren Einheit (das Maß) sind in ihr\naufgehoben. Als reine, unterschiedslose Einheit ist sie der Umschlagspunkt, an dem das Sein\nin das Wesen *umschlägt*. Hegel diskutiert an dieser Stelle auch Spinozas Substanz, die als\nIndifferenz missverstanden werden kann.",
     "crossRefs": [
       {
@@ -344,7 +344,7 @@ const hegelData = [
     "book": "wesenslogik",
     "bookName": "Wesenslogik",
     "position": "Zweites Buch, Einleitung (Band II).",
-    "quote": "„Die Wahrheit des Seyns ist das Wesen. […] Die Sprache hat im Zeitwort sein das Wesen in der vergangenen Zeit: »gewesen« behalten; denn das Wesen ist das vergangene, aber zeitlos vergangene Seyn.“",
+    "quote": "„Die Wahrheit des Seins ist das Wesen. […] Die Sprache hat im Zeitwort sein das Wesen in der vergangenen Zeit: »gewesen« behalten; denn das Wesen ist das vergangene, aber zeitlos vergangene Sein.“",
     "definition": "Das Wesen ist das aufgehobene Sein — das Sein, das in sich gegangen ist. Es\nist nicht mehr das Unmittelbare, sondern das *Vermittelte*, die *Er-Innerung* des Seins. Das\nWesen steht *zwischen* Sein und Begriff und macht die Mitte aus: es ist die erste Negation\ndes Seins und die Vorbereitung des Begriffs.",
     "crossRefs": [
       {
@@ -375,7 +375,7 @@ const hegelData = [
     "book": "wesenslogik",
     "bookName": "Wesenslogik",
     "position": "Erstes Kapitel, B („Das Wesen als Reflexion in ihm selbst“).",
-    "quote": "„Das Seyn ist Schein. Das Sein des Scheins besteht allein in dem Aufgehobenseyn des Seyns, in seiner Nichtigkeit; […] Er ist das Negative gesetzt als Negatives.“",
+    "quote": "„Das Sein ist Schein. Das Sein des Scheins besteht allein in dem Aufgehobenseyn des Seins, in seiner Nichtigkeit; […] Er ist das Negative gesetzt als Negatives.“",
     "definition": "Der Schein ist das, was vom Sein übrig bleibt, nachdem es ins Wesen\nzurückgegangen ist — das Nichtige, das aber als Schein *ist*. Er ist nicht äußerlich,\nsondern der *eigene Schein* des Wesens. Der Skeptizismus hält den Schein für das Ganze;\nHegel zeigt, dass er Moment des Wesens selbst ist.",
     "crossRefs": [
       {
@@ -530,7 +530,7 @@ const hegelData = [
     "book": "wesenslogik",
     "bookName": "Wesenslogik",
     "position": "Zweiter Abschnitt („Die Erscheinung“).",
-    "quote": "„Das Wesen muß erscheinen.“",
+    "quote": "„Das Wesen muss erscheinen.“",
     "definition": "Die Erscheinung ist das Wesen, das *existiert* und in Beziehung auf Anderes\ntritt. Sie ist die Wahrheit der Existenz. Die Erscheinung ist nicht bloßer Schein, sondern die\nManifestation des Wesens. Die Welt der Erscheinung steht unter dem *Gesetz* (dem ruhigen Abbild\nder erscheinenden Welt).",
     "crossRefs": [
       {
@@ -619,7 +619,7 @@ const hegelData = [
     "book": "wesenslogik",
     "bookName": "Wesenslogik",
     "position": "Drittes Kapitel („Das absolute Verhältnis“), A.",
-    "quote": "„Die Substanz ist schon das reale Wesen, oder das Wesen, insofern es mit dem Seyn vereinigt und in Wirklichkeit getreten ist. Der Begriff hat daher die Substanz zu seiner unmittelbaren Voraussetzung.“",
+    "quote": "„Die Substanz ist schon das reale Wesen, oder das Wesen, insofern es mit dem Sein vereinigt und in Wirklichkeit getreten ist. Der Begriff hat daher die Substanz zu seiner unmittelbaren Voraussetzung.“",
     "definition": "Die Substanz ist das absolute, in sich seiende Wesen, das alle Akzidenzen trägt\nund aus sich entlässt. Die Akzidenzen sind die unmittelbare, wechselnde Erscheinung der Substanz.\nDie Substanz ist die *Macht* über ihre Akzidenzen.",
     "crossRefs": [
       {
@@ -671,7 +671,7 @@ const hegelData = [
     "book": "wesenslogik",
     "bookName": "Wesenslogik",
     "position": "Drittes Kapitel, C.",
-    "quote": "„Die Wechselwirkung ist das Gesetztseyn der Kausalität, das heißt, die Nothwendigkeit, welche in der Ursache und Wirkung als äußerliche Bestimmungen auseinanderfällt, ist in ihr gesetzt, als Identität beider.“",
+    "quote": "„Die Wechselwirkung ist das Gesetztseyn der Kausalität, das heißt, die Notwendigkeit, welche in der Ursache und Wirkung als äußerliche Bestimmungen auseinanderfällt, ist in ihr gesetzt, als Identität beider.“",
     "definition": "In der Wechselwirkung wird die Einseitigkeit der Kausalität aufgehoben: Jede\nUrsache ist auch Wirkung, jede Wirkung auch Ursache. Die Wechselwirkung ist die höchste Form\ndes Wesens und zugleich der *Übergang in den Begriff*. In ihr erscheint die *Freiheit* als die\nWahrheit der Notwendigkeit.",
     "crossRefs": [
       {
@@ -697,7 +697,7 @@ const hegelData = [
     "book": "begriffslogik",
     "bookName": "Begriffslogik",
     "position": "Drittes Buch, Erster Abschnitt, Erstes Kapitel.",
-    "quote": "„Der Begriff ist das Freie, als die sich in sich selbst zurücknehmende Negativität; er ist das Reich der Subjektivität und die absolute Negation des unmittelbaren Seyns, welches er in seiner Wahrheit als die Einheit von Seyn und Wesen setzt.“",
+    "quote": "„Der Begriff ist das Freie, als die sich in sich selbst zurücknehmende Negativität; er ist das Reich der Subjektivität und die absolute Negation des unmittelbaren Seins, welches er in seiner Wahrheit als die Einheit von Sein und Wesen setzt.“",
     "definition": "Der Begriff ist die Einheit von Sein und Wesen — das Absolute, wie es *an und\nfür sich* ist. Er ist das *Freie*, die „substantielle Macht“, die sich selbst bestimmt. Der\nBegriff ist kein bloß subjektives Gebilde, sondern die objektive Wahrheit. Er gliedert sich\nin die Momente: *Allgemeinheit, Besonderheit, Einzelheit*.",
     "crossRefs": [
       {
@@ -716,8 +716,8 @@ const hegelData = [
         "targetId": "b07"
       },
       {
-        "target": "Urteil / Schluß",
-        "text": "Der Begriff *ur-teilt* sich und schließt sich im Schluß wieder zusammen.",
+        "target": "Urteil / Schluss",
+        "text": "Der Begriff *ur-teilt* sich und schließt sich im Schluss wieder zusammen.",
         "targetId": "b03"
       }
     ]
@@ -737,19 +737,19 @@ const hegelData = [
         "targetId": "b03"
       },
       {
-        "target": "Schluß",
-        "text": "Im Schluß werden sie wieder zusammengeschlossen.",
+        "target": "Schluss",
+        "text": "Im Schluss werden sie wieder zusammengeschlossen.",
         "targetId": "b04"
       }
     ]
   },
   {
     "id": "b03",
-    "name": "DAS URTEIL (URTHEIL)",
+    "name": "DAS URTEIL",
     "book": "begriffslogik",
     "bookName": "Begriffslogik",
     "position": "Zweites Kapitel.",
-    "quote": "„Das Urtheil ist die Diremtion des Begriffs durch sich selbst; diese Einheit ist der Grund, von welchem es die ursprüngliche Teilung ist.“",
+    "quote": "„Das Urteil ist die Diremtion des Begriffs durch sich selbst; diese Einheit ist der Grund, von welchem es die ursprüngliche Teilung ist.“",
     "definition": "Das Urteil ist die *Ur-Teilung* des Begriffs — das Auseinandertreten seiner\nMomente in Subjekt und Prädikat. Es durchläuft vier Stufen:\n1. **Urteil des Daseins** (positiv, negativ, unendlich)\n2. **Urteil der Reflexion** (singulär, partikulär, universell)\n3. **Urteil der Notwendigkeit** (kategorisch, hypothetisch, disjunktiv)\n4. **Urteil des Begriffs** (assertorisch, problematisch, apodiktisch)",
     "crossRefs": [
       {
@@ -758,29 +758,29 @@ const hegelData = [
         "targetId": "b01"
       },
       {
-        "target": "Schluß",
-        "text": "Die Wahrheit des Urteils ist der Schluß.",
+        "target": "Schluss",
+        "text": "Die Wahrheit des Urteils ist der Schluss.",
         "targetId": "b04"
       }
     ]
   },
   {
     "id": "b04",
-    "name": "DER SCHLUSS (SCHLUß)",
+    "name": "DER SCHLUSS",
     "book": "begriffslogik",
     "bookName": "Begriffslogik",
     "position": "",
     "quote": "",
-    "definition": "Der Schluß ist die Wiederherstellung der Einheit des Begriffs aus der Diremtion\ndes Urteils — das *Vernünftige*. Er hat drei Hauptformen:\n1. **Schluß des Daseins** (E—B—A, Figuren I–IV)\n2. **Schluß der Reflexion** (Allheit, Induktion, Analogie)\n3. **Schluß der Notwendigkeit** (kategorisch, hypothetisch, disjunktiv)",
+    "definition": "Der Schluss ist die Wiederherstellung der Einheit des Begriffs aus der Diremtion\ndes Urteils — das *Vernünftige*. Er hat drei Hauptformen:\n1. **Schluss des Daseins** (E—B—A, Figuren I–IV)\n2. **Schluss der Reflexion** (Allheit, Induktion, Analogie)\n3. **Schluss der Notwendigkeit** (kategorisch, hypothetisch, disjunktiv)",
     "crossRefs": [
       {
         "target": "Urteil",
-        "text": "Der Schluß ist die Wahrheit des Urteils.",
+        "text": "Der Schluss ist die Wahrheit des Urteils.",
         "targetId": "b03"
       },
       {
         "target": "Objektivität",
-        "text": "Der Schluß der Notwendigkeit geht in die *Objektivität* über.",
+        "text": "Der Schluss der Notwendigkeit geht in die *Objektivität* über.",
         "targetId": "b05"
       }
     ]

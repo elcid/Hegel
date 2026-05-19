@@ -5,10 +5,10 @@
 ```mermaid
 graph TD
     subgraph SEINSLOGIK["ERSTES BUCH: DIE LEHRE VOM SEIN"]
-        Sein([Sein / Seyn])
+        Sein([Sein])
         Nichts([Nichts])
         Werden([Werden])
-        Dasein([Dasein / Daseyn])
+        Dasein([Dasein])
         Qualitaet([Qualität])
         Etwas([Etwas und Anderes])
         Endlichkeit([Endlichkeit])
@@ -45,8 +45,8 @@ graph TD
     subgraph BEGRIFFSLOGIK["DRITTES BUCH: DIE LEHRE VOM BEGRIFF"]
         Begriff([Begriff])
         AllgBesEinz([Allgemeinheit · Besonderheit · Einzelheit])
-        Urteil([Urteil / Urtheil])
-        Schluss([Schluss / Schluß])
+        Urteil([Urteil])
+        Schluss([Schluss])
         Objektivitaet([Objektivität])
         Mechanismus([Mechanismus])
         Chemismus([Chemismus])
