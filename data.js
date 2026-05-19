@@ -334,7 +334,7 @@ const hegelData = [
       {
         "target": "Substanz",
         "text": "Die absolute Indifferenz ähnelt der spinozistischen Substanz, bleibt aber",
-        "targetId": "w08"
+        "targetId": "w11"
       }
     ]
   },
@@ -412,7 +412,7 @@ const hegelData = [
       {
         "target": "Grund",
         "text": "Die vollendete Reflexion geht in den Grund über.",
-        "targetId": "w04"
+        "targetId": "w05"
       },
       {
         "target": "Begriff",
@@ -443,7 +443,7 @@ const hegelData = [
       {
         "target": "Grund",
         "text": "Die Einheit von Identität und Unterschied ist der Grund.",
-        "targetId": "w04"
+        "targetId": "w05"
       },
       {
         "target": "Identität / Widerspruch",
@@ -453,7 +453,7 @@ const hegelData = [
       {
         "target": "Grund",
         "text": "Der Gegensatz treibt in den Widerspruch und dieser in den Grund.",
-        "targetId": "w04"
+        "targetId": "w05"
       },
       {
         "target": "Identität / Unterschied",
@@ -463,7 +463,7 @@ const hegelData = [
       {
         "target": "Grund",
         "text": "Der Widerspruch hebt sich in den Grund auf.",
-        "targetId": "w04"
+        "targetId": "w05"
       },
       {
         "target": "Werden (Seinslogik)",
@@ -489,7 +489,7 @@ const hegelData = [
       {
         "target": "Existenz",
         "text": "Wenn alle Bedingungen erfüllt sind, tritt die Sache in die Existenz.",
-        "targetId": "w05"
+        "targetId": "w06"
       },
       {
         "target": "Begriff",
@@ -510,7 +510,7 @@ const hegelData = [
       {
         "target": "Grund",
         "text": "Der Grund entlässt sich in die Existenz.",
-        "targetId": "w04"
+        "targetId": "w05"
       },
       {
         "target": "Ding",
@@ -520,7 +520,7 @@ const hegelData = [
       {
         "target": "Erscheinung",
         "text": "Die Existenz ist noch nicht Erscheinung; diese tritt erst hervor, wenn",
-        "targetId": "w06"
+        "targetId": "w07"
       }
     ]
   },
@@ -546,7 +546,7 @@ const hegelData = [
       {
         "target": "Wirklichkeit",
         "text": "Die Einheit von Erscheinung und Wesen ist die Wirklichkeit.",
-        "targetId": "w07"
+        "targetId": "w09"
       }
     ]
   },
@@ -562,12 +562,12 @@ const hegelData = [
       {
         "target": "Wirklichkeit",
         "text": "Das Verhältnis des Inneren und Äußeren führt zur Wirklichkeit.",
-        "targetId": "w07"
+        "targetId": "w09"
       },
       {
         "target": "Substanz",
         "text": "Die Kraft ist eine Vorform der Substanz.",
-        "targetId": "w08"
+        "targetId": "w11"
       }
     ]
   },
@@ -583,7 +583,7 @@ const hegelData = [
       {
         "target": "Wesen / Erscheinung",
         "text": "Die Wirklichkeit ist deren Synthesis.",
-        "targetId": "w07"
+        "targetId": "w09"
       },
       {
         "target": "Begriff",
@@ -604,7 +604,7 @@ const hegelData = [
       {
         "target": "Wirklichkeit",
         "text": "Das Absolute ist die noch unentfaltete Wirklichkeit.",
-        "targetId": "w07"
+        "targetId": "w09"
       },
       {
         "target": "Spinoza",
@@ -630,7 +630,7 @@ const hegelData = [
       {
         "target": "Kausalität",
         "text": "Die Substanz geht in das Kausalitätsverhältnis über: sie wird zur Ursache.",
-        "targetId": "w09"
+        "targetId": "w12"
       },
       {
         "target": "Begriff",
@@ -651,17 +651,17 @@ const hegelData = [
       {
         "target": "Substanz",
         "text": "Das Kausalitätsverhältnis ist das *bestimmte* Substantialitätsverhältnis.",
-        "targetId": "w08"
+        "targetId": "w11"
       },
       {
         "target": "Wechselwirkung",
         "text": "Die Wahrheit der Kausalität ist die Wechselwirkung.",
-        "targetId": "w10"
+        "targetId": "w13"
       },
       {
         "target": "Grund",
         "text": "Kausalität ist der Grund in seiner äußerlichen Form.",
-        "targetId": "w04"
+        "targetId": "w05"
       }
     ]
   },
@@ -677,7 +677,7 @@ const hegelData = [
       {
         "target": "Kausalität",
         "text": "Die Wechselwirkung ist die aufgehobene Kausalität.",
-        "targetId": "w09"
+        "targetId": "w12"
       },
       {
         "target": "Begriff",
@@ -708,7 +708,7 @@ const hegelData = [
       {
         "target": "Substanz",
         "text": "Die Substanz ist die unmittelbare Voraussetzung des Begriffs; der Begriff",
-        "targetId": "w08"
+        "targetId": "w11"
       },
       {
         "target": "Idee",
@@ -849,7 +849,7 @@ const hegelData = [
       {
         "target": "Wirklichkeit",
         "text": "Die Idee ist die *wahre* Wirklichkeit — gegenüber der bloß",
-        "targetId": "w07"
+        "targetId": "w09"
       }
     ]
   },
