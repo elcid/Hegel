@@ -142,21 +142,7 @@ const bc = {
   begriffslogik: { fill: '#e1d5e7', stroke: '#9673a6', dark: '#5a3a6e' }
 };
 
-const N = principalConcepts.length;
-const outerR = Math.min(cx, cy) - 65;
-const innerR = 85;
-const turns = 3.8;
-const positions = [];
-for (let i = 0; i < N; i++) {
-  const t = i / (N - 1);
-  const angle = t * turns * 2 * Math.PI - Math.PI / 2;
-  const r = outerR - t * (outerR - innerR);
-  positions.push({ x: cx + r * Math.cos(angle), y: cy + r * Math.sin(angle), r, angle });
-}
-const posMap = {};
-principalConcepts.forEach((c, i) => { posMap[c.id] = positions[i]; });
-
-// Edges
+// Build edges data
 const mainProg = [];
 const byBook = {};
 principalConcepts.forEach(c => { if (!byBook[c.book]) byBook[c.book] = []; byBook[c.book].push(c); });
@@ -178,6 +164,36 @@ principalConcepts.forEach(c => {
   });
 });
 
+// Concatenate all edges for force simulation
+const allLinks = [...mainProg.map(e => ({...e, type: 'main'})), ...crossEdges.map(e => ({...e, type: 'cross'}))];
+
+// Initialize node positions in 3 concentric rings
+const ringRadii = { seinslogik: 280, wesenslogik: 180, begriffslogik: 95 };
+principalConcepts.forEach((c, i) => {
+  const bookNodes = byBook[c.book];
+  bookNodes.sort((a, b) => a.id.localeCompare(b.id));
+  const idx = bookNodes.findIndex(n => n.id === c.id);
+  const angle = (idx / bookNodes.length) * 2 * Math.PI - Math.PI / 2;
+  const R = ringRadii[c.book];
+  c.x = cx + R * Math.cos(angle);
+  c.y = cy + R * Math.sin(angle);
+});
+
+// Force simulation
+const simulation = d3.forceSimulation(principalConcepts)
+  .force('link', d3.forceLink(allLinks).id(d => d.id).distance(d => d.type === 'main' ? 70 : 120).strength(d => d.type === 'main' ? 0.6 : 0.15))
+  .force('charge', d3.forceManyBody().strength(-200))
+  .force('collide', d3.forceCollide(50))
+  .force('center', d3.forceCenter(cx, cy))
+  .force('radial', d3.forceRadial(d => ringRadii[d.book] || 200, cx, cy).strength(0.3))
+  .alphaDecay(0.02)
+  .stop();
+
+// Run simulation to completion
+const totalTicks = 300;
+for (let i = 0; i < totalTicks; i++) simulation.tick();
+
+// SVG setup
 const g = svg.append('g');
 const zoom = d3.zoom().scaleExtent([0.35, 3]).on('zoom', ev => g.attr('transform', ev.transform));
 svg.call(zoom);
@@ -186,67 +202,60 @@ const defs = svg.append('defs');
 const filter = defs.append('filter').attr('id', 'sh');
 filter.append('feDropShadow').attr('dx', 0).attr('dy', 1).attr('stdDeviation', 2).attr('flood-opacity', 0.2);
 
-// Spiral guide
-const spiralPts = [];
-for (let i = 0; i <= 200; i++) {
-  const t = i / 200;
-  const a = t * turns * 2 * Math.PI - Math.PI / 2;
-  const r = outerR - t * (outerR - innerR);
-  spiralPts.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]);
-}
-const spiralL = d3.line().curve(d3.curveCatmullRom.alpha(0.5));
-g.append('path').attr('d', spiralL(spiralPts)).attr('fill', 'none').attr('stroke', '#e0dcd4').attr('stroke-width', 1).attr('stroke-opacity', 0.4).attr('stroke-dasharray', '2 4');
+// Draw 3 concentric guide rings
+const ringG = g.append('g');
+['seinslogik','wesenslogik','begriffslogik'].forEach(bk => {
+  ringG.append('circle').attr('cx', cx).attr('cy', cy).attr('r', ringRadii[bk])
+    .attr('fill', 'none').attr('stroke', bc[bk].stroke).attr('stroke-width', 1).attr('stroke-opacity', 0.2).attr('stroke-dasharray', '3 5');
+});
 
-// Curved edge path that follows spiral interior
-function spiralPath(p1, p2) {
-  if (!p1 || !p2) return '';
-  const midR = (p1.r + p2.r) / 2;
-  const midA = (p1.angle + p2.angle) / 2;
-  const pull = Math.min(p1.r, p2.r) * 0.3;
-  const cpx = cx + (midR - pull) * Math.cos(midA);
-  const cpy = cy + (midR - pull) * Math.sin(midA);
-  return `M${p1.x},${p1.y} Q${cpx},${cpy} ${p2.x},${p2.y}`;
+// Edge drawing function
+function edgePath(d) {
+  const s = d.source, t = d.target;
+  return `M${s.x},${s.y}L${t.x},${t.y}`;
 }
 
 const edgeG = g.append('g');
-const edgeMap = {}; // { 'source-target': { g, hit, vis } }
-// Main edges
+const edgeMap = {};
+
+// Draw main edges
 mainProg.forEach(e => {
-  const p1 = posMap[e.source], p2 = posMap[e.target];
-  if (!p1 || !p2) return;
-  const sc = hegelData.find(c => c.id === e.source);
   const eg = edgeG.append('g').style('cursor', 'pointer');
   const key = e.source + '-' + e.target;
-  // invisible wide hit area
-  const hit = eg.append('path').attr('d', spiralPath(p1, p2)).attr('fill', 'none')
+  const sc = principalConcepts.find(c => c.id === e.source);
+  // Hit area
+  const hit = eg.append('line').attr('x1', 0).attr('y1', 0).attr('x2', 0).attr('y2', 0)
     .attr('stroke', 'transparent').attr('stroke-width', 14)
     .on('click', function(ev) { ev.stopPropagation(); showRelPopup(e); })
     .on('mouseover', function(ev) { eg.select('.edge-vis').attr('stroke-width', 7).attr('stroke-opacity', 1); showTT(ev, e.text); })
     .on('mouseout', function() { eg.select('.edge-vis').attr('stroke-width', 5).attr('stroke-opacity', 1); hideTT(); });
-  // visible line
-  const vis = eg.append('path').attr('class', 'edge-vis').attr('d', spiralPath(p1, p2)).attr('fill', 'none')
+  // Visible line
+  const vis = eg.append('line').attr('class', 'edge-vis')
     .attr('stroke', sc ? bc[sc.book].stroke : '#777').attr('stroke-width', 5).attr('stroke-opacity', 1)
     .attr('stroke-linecap', 'round').style('pointer-events', 'none');
   edgeMap[key] = { g: eg, hit, vis, data: e, type: 'main' };
+  // Update positions after simulation
+  const s = principalConcepts.find(c => c.id === e.source);
+  const t = principalConcepts.find(c => c.id === e.target);
+  if (s && t) { hit.attr('x1', s.x).attr('y1', s.y).attr('x2', t.x).attr('y2', t.y); vis.attr('x1', s.x).attr('y1', s.y).attr('x2', t.x).attr('y2', t.y); }
 });
 
-// Cross edges
+// Draw cross edges
 crossEdges.forEach(e => {
-  const p1 = posMap[e.source], p2 = posMap[e.target];
-  if (!p1 || !p2) return;
   const eg = edgeG.append('g').style('cursor', 'pointer');
   const key = e.source + '-' + e.target;
-  // invisible wide hit area
-  const hit = eg.append('path').attr('d', spiralPath(p1, p2)).attr('fill', 'none')
+  const hit = eg.append('line').attr('x1', 0).attr('y1', 0).attr('x2', 0).attr('y2', 0)
     .attr('stroke', 'transparent').attr('stroke-width', 14)
     .on('click', function(ev) { ev.stopPropagation(); showRelPopup(e); })
     .on('mouseover', function(ev) { eg.select('.edge-vis').attr('stroke', '#333').attr('stroke-width', 3.5).attr('stroke-opacity', 0.85); showTT(ev, e.text); })
     .on('mouseout', function() { eg.select('.edge-vis').attr('stroke', '#888').attr('stroke-width', 2).attr('stroke-opacity', 0.55); hideTT(); });
-  // visible dashed line
-  const vis = eg.append('path').attr('class', 'edge-vis').attr('d', spiralPath(p1, p2)).attr('fill', 'none')
+  const vis = eg.append('line').attr('class', 'edge-vis')
     .attr('stroke', '#888').attr('stroke-width', 2).attr('stroke-opacity', 0.55)
     .attr('stroke-dasharray', '5 4').attr('stroke-linecap', 'round').style('pointer-events', 'none');
   edgeMap[key] = { g: eg, hit, vis, data: e, type: 'cross' };
+  const s = principalConcepts.find(c => c.id === e.source);
+  const t = principalConcepts.find(c => c.id === e.target);
+  if (s && t) { hit.attr('x1', s.x).attr('y1', s.y).attr('x2', t.x).attr('y2', t.y); vis.attr('x1', s.x).attr('y1', s.y).attr('x2', t.x).attr('y2', t.y); }
 });
 
 // Nodes — pill shape with text inside
@@ -259,7 +268,7 @@ function pillW(d) { return Math.max(truncName(d).length * 7.5, 32); }
 
 const nodeG = g.append('g');
 const nodeSel = nodeG.selectAll('.node').data(principalConcepts).enter().append('g')
-  .attr('class', 'node').attr('transform', (d, i) => `translate(${positions[i].x},${positions[i].y})`).style('cursor', 'pointer');
+  .attr('class', 'node').attr('transform', d => `translate(${d.x},${d.y})`).style('cursor', 'pointer');
 
 nodeSel.append('rect')
   .attr('x', d => -pillW(d) / 2)
@@ -297,22 +306,16 @@ const drag = d3.drag()
     d3.select(this).select('rect').attr('stroke-width', 3);
   })
   .on('drag', function(ev, d) {
-    const idx = principalConcepts.findIndex(c => c.id === d.id);
-    if (idx < 0) return;
-    // Update position
-    positions[idx].x = ev.x;
-    positions[idx].y = ev.y;
-    posMap[d.id] = positions[idx];
-    // Move node
-    d3.select(this).attr('transform', `translate(${ev.x},${ev.y})`);
+    d.x = ev.x; d.y = ev.y;
+    d3.select(this).attr('transform', `translate(${d.x},${d.y})`);
     // Update connected edges
     for (const [key, entry] of Object.entries(edgeMap)) {
       if (entry.data.source === d.id || entry.data.target === d.id) {
-        const sp = posMap[entry.data.source], tp = posMap[entry.data.target];
-        if (sp && tp) {
-          const dVal = spiralPath(sp, tp);
-          entry.hit.attr('d', dVal);
-          entry.vis.attr('d', dVal);
+        const s = principalConcepts.find(c => c.id === entry.data.source);
+        const t = principalConcepts.find(c => c.id === entry.data.target);
+        if (s && t) {
+          entry.hit.attr('x1', s.x).attr('y1', s.y).attr('x2', t.x).attr('y2', t.y);
+          entry.vis.attr('x1', s.x).attr('y1', s.y).attr('x2', t.x).attr('y2', t.y);
         }
       }
     }
