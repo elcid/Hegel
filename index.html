@@ -182,8 +182,8 @@ principalConcepts.forEach((c, i) => {
 // Force simulation
 const simulation = d3.forceSimulation(principalConcepts)
   .force('link', d3.forceLink(allLinks).id(d => d.id).distance(d => d.type === 'main' ? 85 : 140).strength(d => d.type === 'main' ? 0.5 : 0.12))
-  .force('charge', d3.forceManyBody().strength(-200))
-  .force('collide', d3.forceCollide(55))
+  .force('charge', d3.forceManyBody().strength(-280))
+  .force('collide', d3.forceCollide(60))
   .force('center', d3.forceCenter(cx, cy))
   .force('radial', d3.forceRadial(d => ringRadii[d.book] || 200, cx, cy).strength(0.3))
   .alphaDecay(0.02)
@@ -276,7 +276,7 @@ nodeSel.append('rect')
   .attr('fill', d => bc[d.book].fill).attr('stroke', d => bc[d.book].stroke).attr('stroke-width', 2).attr('filter', 'url(#sh)');
 
 nodeSel.append('text').attr('text-anchor', 'middle').attr('dy', '0.35em')
-  .attr('font-size', '8px').attr('font-family', 'DejaVu Sans, Arial, sans-serif')
+  .attr('font-size', '7.5px').attr('font-family', 'DejaVu Sans, Arial, sans-serif')
   .attr('fill', d => bc[d.book].dark).attr('font-weight', '500')
   .text(d => truncName(d));
 
