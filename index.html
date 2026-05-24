@@ -596,13 +596,13 @@ function rebuildCards(lang) {
       const dispName = c[`name_${lang}`] || c.name;
       hdr.innerHTML = `<span class="card-name">${dispName}</span><span class="card-arrow">▾</span>`;
       const body = document.createElement('div'); body.className = 'card-body';
-      if (c.position) body.innerHTML += `<div class="label">${lb.labelPosition[lang]}</div><div class="block">${c.position}</div>`;
+      if (c.position) body.innerHTML += '<div class="label">Position</div><div class="block">'+c.position+'</div>';
       const quote = c[`quote_${lang}`] || c.quote;
-      if (quote) body.innerHTML += `<div class="label">${lb.labelQuote[lang]}</div><div class="quote">${quote}</div>`;
+      if (quote) body.innerHTML += '<div class="label">Originalzitat</div><div class="quote">'+quote+'</div>';
       const def = c[`definition_${lang}`] || c.definition;
-      if (def) body.innerHTML += `<div class="label">${lb.labelDefinition[lang]}</div><div class="block">${def.replace(/\n/g, '<br>')}</div>`;
+      if (def) body.innerHTML += '<div class="label">Definition</div><div class="block">'+def.replace(/\n/g, '<br>')+'</div>';
       if (c.crossRefs && c.crossRefs.length) {
-        let refsHtml = `<div class="label">${lb.labelCrossRefs[lang]}</div><div>`;
+        let refsHtml = '<div class="label">Querverweise</div><div>';
         for (const cr of c.crossRefs) {
           if (cr.targetId) {
             const targetC = hegelData.find(hc => hc.id === cr.targetId);
