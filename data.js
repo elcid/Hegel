@@ -423,7 +423,7 @@ const hegelData = [
   },
   {
     "id": "w04",
-    "name": "DIE WESENHEITEN (REFLEXIONSBESTIMMUNGEN)",
+    "name": "REFLEXIONSBESTIMMUNGEN",
     "book": "wesenslogik",
     "bookName": "Wesenslogik",
     "position": "",

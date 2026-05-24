@@ -355,7 +355,7 @@ bestimmt. Sie durchläuft drei Formen:
 
 ---
 
-### DIE WESENHEITEN (REFLEXIONSBESTIMMUNGEN)
+### REFLEXIONSBESTIMMUNGEN
 
 #### IDENTITÄT
 

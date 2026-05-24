@@ -137,9 +137,9 @@ svg.attr('viewBox', `0 0 ${W} ${H}`);
 
 const cx = W / 2, cy = H / 2;
 const bc = {
-  seinslogik: { fill: '#dae8fc', stroke: '#6c8ebf', dark: '#2b4d7a' },
-  wesenslogik: { fill: '#d5e8d4', stroke: '#82b366', dark: '#3d6b2e' },
-  begriffslogik: { fill: '#e1d5e7', stroke: '#9673a6', dark: '#5a3a6e' }
+  seinslogik: { fill: 'rgba(108,142,191,0.07)', stroke: '#6c8ebf', dark: '#2b4d7a' },
+  wesenslogik: { fill: 'rgba(130,179,102,0.07)', stroke: '#82b366', dark: '#3d6b2e' },
+  begriffslogik: { fill: 'rgba(150,115,166,0.07)', stroke: '#9673a6', dark: '#5a3a6e' }
 };
 
 // Build edges data
@@ -198,15 +198,11 @@ const g = svg.append('g');
 const zoom = d3.zoom().scaleExtent([0.35, 3]).on('zoom', ev => g.attr('transform', ev.transform));
 svg.call(zoom);
 
-const defs = svg.append('defs');
-const filter = defs.append('filter').attr('id', 'sh');
-filter.append('feDropShadow').attr('dx', 0).attr('dy', 1).attr('stdDeviation', 2).attr('flood-opacity', 0.2);
-
-// Draw 3 concentric guide rings
+// Subtle guide rings — macro structure for orientation
 const ringG = g.append('g');
 ['seinslogik','wesenslogik','begriffslogik'].forEach(bk => {
   ringG.append('circle').attr('cx', cx).attr('cy', cy).attr('r', ringRadii[bk])
-    .attr('fill', 'none').attr('stroke', bc[bk].stroke).attr('stroke-width', 1).attr('stroke-opacity', 0.2).attr('stroke-dasharray', '3 5');
+    .attr('fill', 'none').attr('stroke', '#999').attr('stroke-width', 0.3).attr('stroke-opacity', 0.06);
 });
 
 // Edge drawing function
@@ -227,12 +223,12 @@ mainProg.forEach(e => {
   const hit = eg.append('line').attr('x1', 0).attr('y1', 0).attr('x2', 0).attr('y2', 0)
     .attr('stroke', 'transparent').attr('stroke-width', 14)
     .on('click', function(ev) { ev.stopPropagation(); showRelPopup(e); })
-    .on('mouseover', function(ev) { eg.select('.edge-vis').attr('stroke-width', 7).attr('stroke-opacity', 1); showTT(ev, e.text); })
-    .on('mouseout', function() { eg.select('.edge-vis').attr('stroke-width', 5).attr('stroke-opacity', 1); hideTT(); });
+    .on('mouseover', function(ev) { eg.select('.edge-vis').attr('stroke-opacity', 0.8).attr('stroke-width', 2.5); showTT(ev, e.text); })
+    .on('mouseout', function() { eg.select('.edge-vis').attr('stroke-width', 1.5).attr('stroke-opacity', 0.5); hideTT(); });
   // Visible line
   const vis = eg.append('line').attr('class', 'edge-vis')
-    .attr('stroke', sc ? bc[sc.book].stroke : '#777').attr('stroke-width', 5).attr('stroke-opacity', 1)
-    .attr('stroke-linecap', 'round').style('pointer-events', 'none');
+    .attr('stroke', sc ? bc[sc.book].stroke : '#999').attr('stroke-width', 1.5).attr('stroke-opacity', 0.5)
+    .style('pointer-events', 'none');
   edgeMap[key] = { g: eg, hit, vis, data: e, type: 'main' };
   // Update positions after simulation
   const s = principalConcepts.find(c => c.id === e.source);
@@ -247,58 +243,59 @@ crossEdges.forEach(e => {
   const hit = eg.append('line').attr('x1', 0).attr('y1', 0).attr('x2', 0).attr('y2', 0)
     .attr('stroke', 'transparent').attr('stroke-width', 14)
     .on('click', function(ev) { ev.stopPropagation(); showRelPopup(e); })
-    .on('mouseover', function(ev) { eg.select('.edge-vis').attr('stroke', '#333').attr('stroke-width', 3.5).attr('stroke-opacity', 0.85); showTT(ev, e.text); })
-    .on('mouseout', function() { eg.select('.edge-vis').attr('stroke', '#888').attr('stroke-width', 2).attr('stroke-opacity', 0.55); hideTT(); });
+    .on('mouseover', function(ev) { eg.select('.edge-vis').attr('stroke', '#555').attr('stroke-width', 1.2).attr('stroke-opacity', 0.55); showTT(ev, e.text); })
+    .on('mouseout', function() { eg.select('.edge-vis').attr('stroke', '#aaa').attr('stroke-width', 0.8).attr('stroke-opacity', 0.3); hideTT(); });
   const vis = eg.append('line').attr('class', 'edge-vis')
-    .attr('stroke', '#888').attr('stroke-width', 2).attr('stroke-opacity', 0.55)
-    .attr('stroke-dasharray', '5 4').attr('stroke-linecap', 'round').style('pointer-events', 'none');
+    .attr('stroke', '#aaa').attr('stroke-width', 0.8).attr('stroke-opacity', 0.3)
+    .attr('stroke-dasharray', '2 3').style('pointer-events', 'none');
   edgeMap[key] = { g: eg, hit, vis, data: e, type: 'cross' };
   const s = principalConcepts.find(c => c.id === e.source);
   const t = principalConcepts.find(c => c.id === e.target);
   if (s && t) { hit.attr('x1', s.x).attr('y1', s.y).attr('x2', t.x).attr('y2', t.y); vis.attr('x1', s.x).attr('y1', s.y).attr('x2', t.x).attr('y2', t.y); }
 });
 
-// Nodes — pill shape with text inside
+// Nodes — pill sized to full name, no truncation
 function truncName(d) {
-  let n = d.name.split('(')[0].trim().split('·')[0].split('/')[0].trim();
-  if (n.length > 13) n = n.substring(0, 11) + '…';
-  return n;
+  return d.name;
 }
-function pillW(d) { return Math.max(truncName(d).length * 7.5, 32); }
+function pillW(d) { return Math.max(d.name.length * 7.8, 32); }
 
 const nodeG = g.append('g');
 const nodeSel = nodeG.selectAll('.node').data(principalConcepts).enter().append('g')
   .attr('class', 'node').attr('transform', d => `translate(${d.x},${d.y})`).style('cursor', 'pointer');
 
+// Minimal node: subtle tint, clean stroke, no drop shadow
 nodeSel.append('rect')
   .attr('x', d => -pillW(d) / 2)
   .attr('y', -13).attr('width', d => pillW(d)).attr('height', 26).attr('rx', 13)
-  .attr('fill', d => bc[d.book].fill).attr('stroke', d => bc[d.book].stroke).attr('stroke-width', 2).attr('filter', 'url(#sh)');
+  .attr('fill', d => bc[d.book].fill).attr('stroke', d => bc[d.book].stroke).attr('stroke-width', 1.2);
 
 nodeSel.append('text').attr('text-anchor', 'middle').attr('dy', '0.35em')
-  .attr('font-size', '7.5px').attr('font-family', 'DejaVu Sans, Arial, sans-serif')
+  .attr('font-size', '8.5px').attr('font-family', 'DejaVu Sans, Arial, sans-serif')
   .attr('fill', d => bc[d.book].dark).attr('font-weight', '500')
   .text(d => truncName(d));
 
 // Node hover — highlight connected edges, dim rest
 nodeSel.on('mouseover', function(ev, d) {
-    d3.select(this).select('rect').attr('stroke-width', 3)
-      .attr('x', d => -pillW(d) / 2 - 2).attr('width', d => pillW(d) + 4);
-    edgeG.selectAll('.edge-vis').attr('stroke-opacity', 0.05);
+    d3.select(this).select('rect')
+      .attr('stroke-width', 1.8)
+      .attr('stroke-opacity', 0.85);
+    edgeG.selectAll('.edge-vis').attr('stroke-opacity', 0.12);
     for (const [key, entry] of Object.entries(edgeMap)) {
       if (entry.data.source === d.id || entry.data.target === d.id) {
         if (entry.type === 'main') {
-          entry.vis.attr('stroke-opacity', 1).attr('stroke-width', 5);
+          entry.vis.attr('stroke-opacity', 0.7).attr('stroke-width', 2);
         } else {
-          entry.vis.attr('stroke', '#333').attr('stroke-width', 2.5).attr('stroke-opacity', 0.8);
+          entry.vis.attr('stroke', '#555').attr('stroke-width', 1.2).attr('stroke-opacity', 0.55);
         }
       }
     }
     showTT(ev, d.name + (d.definition ? '\n' + d.definition.substring(0, 150) + '…' : ''), '');
   })
   .on('mouseout', function() {
-    d3.select(this).select('rect').attr('stroke-width', 2)
-      .attr('x', d => -pillW(d) / 2).attr('width', d => pillW(d));
+    d3.select(this).select('rect')
+      .attr('stroke-width', 1.2)
+      .attr('stroke-opacity', 1);
     hideTT();
     resetEdges();
   });
@@ -307,15 +304,15 @@ nodeSel.on('click', function(ev, d) { ev.stopPropagation(); closeRelPopup(); nav
 
 function resetEdges() {
   edgeG.selectAll('.edge-vis')
-    .attr('stroke-opacity', function() { return d3.select(this).attr('stroke-dasharray') ? 0.55 : 1; })
-    .attr('stroke-width', function() { return d3.select(this).attr('stroke-dasharray') ? 2 : 5; })
-    .attr('stroke', function() { return d3.select(this).attr('stroke-dasharray') ? '#888' : null; });
+    .attr('stroke-opacity', function() { return d3.select(this).attr('stroke-dasharray') ? 0.3 : 0.5; })
+    .attr('stroke-width', function() { return d3.select(this).attr('stroke-dasharray') ? 0.8 : 1.5; })
+    .attr('stroke', function() { return d3.select(this).attr('stroke-dasharray') ? '#aaa' : null; });
 }
 
 // Drag behavior
 const drag = d3.drag()
   .on('start', function(ev, d) {
-    d3.select(this).select('rect').attr('stroke-width', 3);
+    d3.select(this).select('rect').attr('stroke-opacity', 0.75);
   })
   .on('drag', function(ev, d) {
     d.x = ev.x; d.y = ev.y;
@@ -333,7 +330,7 @@ const drag = d3.drag()
     }
   })
   .on('end', function(ev, d) {
-    d3.select(this).select('rect').attr('stroke-width', 2);
+    d3.select(this).select('rect').attr('stroke-opacity', 1);
   });
 nodeSel.call(drag);
 svg.on('click', () => { resetEdges(); closeRelPopup(); });
