@@ -63,6 +63,7 @@ header p{font-size:.9rem;opacity:.7;margin-top:.3rem}
 .book-wesens .card-body a.crossref{background:var(--wesens-dark)}
 .book-begriffs .card-body a.crossref{background:var(--begriffs-dark)}
 .card-body a.crossref:hover{opacity:.85}
+.crossref-text{font-size:.78rem;color:#555;margin:0 0 .4rem 0;line-height:1.5;padding-left:.3rem;border-left:1px solid #ddd}
 .highlight{animation:hl 1.5s ease-out}
 @keyframes hl{0%{box-shadow:0 0 0 5px rgba(150,115,166,.5)}100%{box-shadow:var(--shadow)}}
 
@@ -419,7 +420,9 @@ for (const book of books) {
       let refsHtml = '<div class="label">Querverweise</div><div>';
       for (const cr of c.crossRefs) {
         if (cr.targetId) {
-          refsHtml += `<a class="crossref" href="#${cr.targetId}" data-target="${cr.targetId}" title="${cr.text || ''}">${cr.target}</a>`;
+          refsHtml += `<a class="crossref" href="#${cr.targetId}" data-target="${cr.targetId}">${cr.target}</a>`;
+          const txt = cr.text || '';
+          if (txt) refsHtml += `<div class="crossref-text">${fmtCR(txt)}</div>`;
         }
       }
       refsHtml += '</div>';
@@ -554,6 +557,21 @@ function switchLang(lang) {
 
 }
 
+// Convert **bold** and *italic* in crossref text to HTML
+function fmtCR(text) {
+  if (!text) return '';
+  return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\*(.+?)\*/g, '<em>$1</em>');
+}
+
+// Look up translated crossref text
+function crText(srcId, tgtId, text, lang) {
+  if (lang === 'de' || !text) return text || '';
+  const key = srcId + '_' + tgtId;
+  const ct = transData.crossRefTexts;
+  if (ct && ct[key] && ct[key][lang]) return ct[key][lang];
+  return text; // fallback to German
+}
+
 function rebuildCards(lang) {
   const gridEl = document.getElementById('grid');
   gridEl.innerHTML = '';
@@ -589,7 +607,9 @@ function rebuildCards(lang) {
           if (cr.targetId) {
             const targetC = hegelData.find(hc => hc.id === cr.targetId);
             const dispTarget = targetC ? (targetC[`name_${lang}`] || targetC.name) : cr.target;
-            refsHtml += `<a class="crossref" href="#${cr.targetId}" data-target="${cr.targetId}" title="${cr.text || ''}">${dispTarget}</a>`;
+            refsHtml += `<a class="crossref" href="#${cr.targetId}" data-target="${cr.targetId}">${dispTarget}</a>`;
+            const txt = crText(c.id, cr.targetId, cr.text, lang);
+            if (txt) refsHtml += `<div class="crossref-text">${fmtCR(txt)}</div>`;
           }
         }
         refsHtml += '</div>';
