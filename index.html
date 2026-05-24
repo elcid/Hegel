@@ -9,7 +9,9 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--seins:#dae8fc;--seins-border:#6c8ebf;--seins-dark:#2b4d7a;--wesens:#d5e8d4;--wesens-border:#82b366;--wesens-dark:#3d6b2e;--begriffs:#e1d5e7;--begriffs-border:#9673a6;--begriffs-dark:#5a3a6e;--bg:#f8f5f0;--card-bg:#fff;--text:#333;--muted:#777;--shadow:0 1px 4px rgba(0,0,0,.08)}
 body{font-family:'DejaVu Serif',Georgia,'Times New Roman',serif;background:var(--bg);color:var(--text);line-height:1.6}
-header{background:#1a1a2e;color:#e0d6c2;padding:2rem 1.5rem;text-align:center}
+header{background:#1a1a2e;color:#e0d6c2;padding:2rem 1.5rem;text-align:center;position:relative}
+.lang-btn{padding:4px 10px;border:1px solid rgba(224,214,194,.4);border-radius:4px;background:transparent;color:rgba(224,214,194,.6);cursor:pointer;font-size:.82rem;font-family:inherit}
+.lang-btn:hover,.lang-btn.active{background:rgba(224,214,194,.25)!important;color:#e0d6c2!important;border-color:#e0d6c2!important}
 header h1{font-size:1.8rem;font-weight:400;letter-spacing:.03em}
 header p{font-size:.9rem;opacity:.7;margin-top:.3rem}
 .container{max-width:1400px;margin:0 auto;padding:1.5rem}
@@ -78,6 +80,11 @@ footer{text-align:center;padding:3rem 1.5rem;font-size:.75rem;color:var(--muted)
 <header>
 <h1>Hegel · Wissenschaft der Logik</h1>
 <p>Begriffslexikon — interaktives Spiral-Diagramm der Hauptbegriffe</p>
+<div id="lang-switcher" style="position:absolute;top:1rem;right:1.5rem;display:flex;gap:4px">
+  <button class="lang-btn active" data-lang="de">DE</button>
+  <button class="lang-btn" data-lang="en">EN</button>
+  <button class="lang-btn" data-lang="es">ESP</button>
+</div>
 </header>
 
 <div class="container">
@@ -87,7 +94,7 @@ footer{text-align:center;padding:3rem 1.5rem;font-size:.75rem;color:var(--muted)
 <span class="legend-item"><span class="legend-dot seins"></span> Seinslogik</span>
 <span class="legend-item"><span class="legend-dot wesens"></span> Wesenslogik</span>
 <span class="legend-item"><span class="legend-dot begriffs"></span> Begriffslogik</span>
-<span style="font-size:.75rem;color:var(--muted)">| Klick: Definition · Klick auf Linie: Relation · Esc: Popup schließen</span>
+<span id="legend-help" style="font-size:.75rem;color:var(--muted)">| Klick: Definition · Klick auf Linie: Relation · Esc: Popup schließen</span>
 </div>
 <div class="graph-links">
 <a href="Hegel-Querverweise.png" target="_blank">PNG-Diagramm</a>·
@@ -117,7 +124,21 @@ Erstellt mit DeepSeek · 2026
 </footer>
 
 <script src="data.js"></script>
+<script src="translations.js"></script>
 <script>
+// ======== LANGUAGE STATE ========
+let currentLang = 'de';
+
+// Merge translations into concept data
+hegelData.forEach(c => {
+  const tn = transData.names[c.id];
+  if (tn) { c.name_en = tn.en; c.name_es = tn.es; }
+  const td = transData.definitions[c.id];
+  if (td) { c.definition_en = td.en; c.definition_es = td.es; }
+  const tq = transData.quotes[c.id];
+  if (tq) { c.quote_en = tq.en; c.quote_es = tq.es; }
+});
+
 // ======== HAUPTBEGRIFFE ========
 const principalIds = [
   's01','s02','s03','s04','s05','s07','s08','s10','s12','s13',
@@ -264,16 +285,22 @@ const nodeG = g.append('g');
 const nodeSel = nodeG.selectAll('.node').data(principalConcepts).enter().append('g')
   .attr('class', 'node').attr('transform', d => `translate(${d.x},${d.y})`).style('cursor', 'pointer');
 
+// Store node rect and text refs for language switching
+const nodeTextRefs = {};
+const nodeRectRefs = {};
+
 // Minimal node: subtle tint, clean stroke, no drop shadow
 nodeSel.append('rect')
   .attr('x', d => -pillW(d) / 2)
   .attr('y', -13).attr('width', d => pillW(d)).attr('height', 26).attr('rx', 13)
-  .attr('fill', d => bc[d.book].fill).attr('stroke', d => bc[d.book].stroke).attr('stroke-width', 1.2);
+  .attr('fill', d => bc[d.book].fill).attr('stroke', d => bc[d.book].stroke).attr('stroke-width', 1.2)
+  .each(function(d) { nodeRectRefs[d.id] = this; });
 
 nodeSel.append('text').attr('text-anchor', 'middle').attr('dy', '0.35em')
   .attr('font-size', '8.5px').attr('font-family', 'DejaVu Sans, Arial, sans-serif')
   .attr('fill', d => bc[d.book].dark).attr('font-weight', '500')
-  .text(d => truncName(d));
+  .text(d => truncName(d))
+  .each(function(d) { nodeTextRefs[d.id] = this; });
 
 // Node hover — highlight connected edges, dim rest
 nodeSel.on('mouseover', function(ev, d) {
@@ -373,7 +400,7 @@ const books = [
   { key: 'begriffslogik', cls: 'begriffs', title: 'Drittes Buch: Die Lehre vom Begriff' }
 ];
 const gridEl = document.getElementById('grid');
-const conceptMap = {};
+let conceptMap = {};
 
 for (const book of books) {
   const concepts = hegelData.filter(c => c.book === book.key);
@@ -433,6 +460,159 @@ if (principalConcepts.length) {
   const f = document.getElementById(principalConcepts[0].id);
   if (f) setTimeout(() => f.classList.add('expanded'), 500);
 }
+
+// ======== LANGUAGE SWITCHING ========
+function switchLang(lang) {
+  if (lang === currentLang) return;
+  currentLang = lang;
+
+  // Update button states
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+
+  const ui = transData.ui;
+
+  // Update header
+  document.querySelector('header h1').textContent = ui.title[lang];
+  document.querySelector('header p').textContent = ui.subtitle[lang];
+
+  // Update concept names in hegelData
+  hegelData.forEach(c => {
+    if (c[`name_${lang}`]) c.currentName = c[`name_${lang}`];
+    if (c[`definition_${lang}`]) c.currentDef = c[`definition_${lang}`];
+    if (c[`quote_${lang}`]) c.currentQuote = c[`quote_${lang}`];
+  });
+  // Update principal concepts names
+  principalConcepts.forEach(c => {
+    const src = hegelData.find(d => d.id === c.id);
+    if (src) {
+      if (src.currentName) c.name = src.currentName;
+      if (src.currentDef) c.definition = src.currentDef;
+      if (src.currentQuote) c.quote = src.currentQuote;
+    }
+  });
+
+  // Update graph node texts
+  for (const [id, el] of Object.entries(nodeTextRefs)) {
+    const c = hegelData.find(d => d.id === id);
+    el.textContent = c && c.currentName ? c.currentName : (c ? c.name : id);
+  }
+
+  // Resize pills to fit translated names
+  for (const [id, rect] of Object.entries(nodeRectRefs)) {
+    const c = hegelData.find(d => d.id === id);
+    if (c) {
+      const name = c.currentName || c.name;
+      const w = Math.max(name.length * 7.8, 32);
+      rect.setAttribute('width', w);
+      rect.setAttribute('x', -w / 2);
+    }
+  }
+
+  // Update main progression edge labels
+  mainProg.forEach(e => {
+    const d = ['Dialektischer Übergang','Dialectical Transition','Transición Dialéctica'];
+    const i = ['Übergang der Indifferenz ins Wesen','Transition of Indifference into Essence','Transición de la Indiferencia a la Esencia'];
+    const g = ['Genesis des Begriffs aus der Wechselwirkung','Genesis of the Concept from Interaction','Génesis del Concepto desde la Acción Recíproca'];
+    if (d.includes(e.text)) e.text = ui.edgeDialectic[lang] || e.text;
+    else if (i.includes(e.text)) e.text = ui.edgeIndifference[lang] || e.text;
+    else if (g.includes(e.text)) e.text = ui.edgeGenesis[lang] || e.text;
+  });
+
+  // Update legend
+  document.querySelectorAll('.legend-item').forEach(el => {
+    const txt = el.textContent.trim();
+    if (txt.includes('Seinslogik') || txt.includes('Doctrine of Being') || txt.includes('Doctrina del Ser')) {
+      el.childNodes[1].textContent = ' ' + ui.seinslogik[lang];
+    } else if (txt.includes('Wesenslogik') || txt.includes('Doctrine of Essence') || txt.includes('Doctrina de la Esencia')) {
+      el.childNodes[1].textContent = ' ' + ui.wesenslogik[lang];
+    } else if (txt.includes('Begriffslogik') || txt.includes('Doctrine of the Concept') || txt.includes('Doctrina del Concepto')) {
+      el.childNodes[1].textContent = ' ' + ui.begriffslogik[lang];
+    }
+  });
+
+  // Update legend help text
+  const helpEl = document.getElementById('legend-help');
+  if (helpEl) helpEl.textContent = '| ' + ui.legendHelp[lang];
+
+  // Update graph links
+  const links = document.querySelectorAll('.graph-links a');
+  const linkKeys = ['graphLinksPng', 'graphLinksMermaid', 'graphLinksPdf', 'graphLinksLexMd', 'graphLinksLexPdf'];
+  if (links.length >= linkKeys.length) {
+    links.forEach((a, i) => { if (i < linkKeys.length) a.textContent = ui[linkKeys[i]][lang]; });
+  }
+
+  // Update footer
+  document.querySelector('footer').innerHTML = ui.footer[lang];
+
+  // Update rel-popup goto text
+  document.getElementById('rpGoto').textContent = ui.rpGoto[lang];
+
+  // Rebuild card grid
+  rebuildCards(lang);
+
+}
+
+function rebuildCards(lang) {
+  const gridEl = document.getElementById('grid');
+  gridEl.innerHTML = '';
+  conceptMap = {};
+
+  const lb = transData.ui;
+  const bookTitles = [
+    { key: 'seinslogik', titleKey: 'bookSein', cls: 'seins' },
+    { key: 'wesenslogik', titleKey: 'bookWesen', cls: 'wesens' },
+    { key: 'begriffslogik', titleKey: 'bookBegriff', cls: 'begriffs' }
+  ];
+
+  for (const book of bookTitles) {
+    const concepts = hegelData.filter(c => c.book === book.key);
+    if (!concepts.length) continue;
+    const col = document.createElement('div'); col.className = `book-col book-${book.cls}`;
+    const tdiv = document.createElement('div'); tdiv.className = 'book-title'; tdiv.textContent = lb[book.titleKey][lang];
+    col.appendChild(tdiv);
+    for (const c of concepts) {
+      const card = document.createElement('div'); card.className = 'card'; card.id = c.id;
+      const hdr = document.createElement('div'); hdr.className = 'card-header';
+      const dispName = c[`name_${lang}`] || c.name;
+      hdr.innerHTML = `<span class="card-name">${dispName}</span><span class="card-arrow">▾</span>`;
+      const body = document.createElement('div'); body.className = 'card-body';
+      if (c.position) body.innerHTML += `<div class="label">${lb.labelPosition[lang]}</div><div class="block">${c.position}</div>`;
+      const quote = c[`quote_${lang}`] || c.quote;
+      if (quote) body.innerHTML += `<div class="label">${lb.labelQuote[lang]}</div><div class="quote">${quote}</div>`;
+      const def = c[`definition_${lang}`] || c.definition;
+      if (def) body.innerHTML += `<div class="label">${lb.labelDefinition[lang]}</div><div class="block">${def.replace(/\n/g, '<br>')}</div>`;
+      if (c.crossRefs && c.crossRefs.length) {
+        let refsHtml = `<div class="label">${lb.labelCrossRefs[lang]}</div><div>`;
+        for (const cr of c.crossRefs) {
+          if (cr.targetId) {
+            const targetC = hegelData.find(hc => hc.id === cr.targetId);
+            const dispTarget = targetC ? (targetC[`name_${lang}`] || targetC.name) : cr.target;
+            refsHtml += `<a class="crossref" href="#${cr.targetId}" data-target="${cr.targetId}" title="${cr.text || ''}">${dispTarget}</a>`;
+          }
+        }
+        refsHtml += '</div>';
+        body.innerHTML += refsHtml;
+      }
+      card.appendChild(hdr); card.appendChild(body);
+      hdr.addEventListener('click', () => toggleCard(card));
+      col.appendChild(card); conceptMap[c.id] = card;
+    }
+    gridEl.appendChild(col);
+  }
+
+  // Open first card
+  if (principalConcepts.length) {
+    const f = document.getElementById(principalConcepts[0].id);
+    if (f) f.classList.add('expanded');
+  }
+}
+
+// Wire language buttons
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => switchLang(btn.dataset.lang));
+});
 </script>
 </body>
 </html>
