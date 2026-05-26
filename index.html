@@ -482,17 +482,25 @@ function switchLang(lang) {
 
   // Update concept names in hegelData
   hegelData.forEach(c => {
-    if (c[`name_${lang}`]) c.currentName = c[`name_${lang}`];
-    if (c[`definition_${lang}`]) c.currentDef = c[`definition_${lang}`];
-    if (c[`quote_${lang}`]) c.currentQuote = c[`quote_${lang}`];
+    if (lang === 'de') {
+      c.currentName = null;
+      c.currentDef = null;
+      c.currentQuote = null;
+    } else {
+      if (c[`name_${lang}`]) c.currentName = c[`name_${lang}`];
+      if (c[`definition_${lang}`]) c.currentDef = c[`definition_${lang}`];
+      if (c[`quote_${lang}`]) c.currentQuote = c[`quote_${lang}`];
+    }
   });
   // Update principal concepts names
   principalConcepts.forEach(c => {
     const src = hegelData.find(d => d.id === c.id);
     if (src) {
-      if (src.currentName) c.name = src.currentName;
+      c.name = src.currentName || src.name;
       if (src.currentDef) c.definition = src.currentDef;
+      else if (lang === 'de') c.definition = src.definition;
       if (src.currentQuote) c.quote = src.currentQuote;
+      else if (lang === 'de') c.quote = src.quote;
     }
   });
 
