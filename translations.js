@@ -188,10 +188,39 @@ const transData = {
     b10: {
       en: "The Absolute Idea is the highest point of the Logic — the consummated unity of Theory and Practice, Being and Thinking. Its content is the *Method*: the dialectical movement that contains all preceding determinations as its moments. It is the self-comprehending Absolute, *pure personality*. With it Logic closes and releases itself into Nature.",
       es: "La Idea Absoluta es el punto más alto de la Lógica — la unidad consumada de Teoría y Práctica, Ser y Pensar. Su contenido es el *Método*: el movimiento dialéctico que contiene todas las determinaciones precedentes como sus momentos. Es el Absoluto que se comprende a sí mismo, la *personalidad pura*. Con ella la Lógica se cierra y se libera en la Naturaleza."
+    },
+    // Additional definitions for remaining concepts
+    s06: {
+      en: "Determinate Being reflected into itself becomes *Something*. Something stands in relation to an *Other*. The *limit* is the shared determinateness of both. The Finite is what is limited by its boundary — it *ought* to go beyond the barrier, but perishes in doing so. The truth of the finite is its *ideality*.",
+      es: "El Ser Determinado reflejado en sí mismo se convierte en *Algo*. Algo está en relación con un *Otro*. El *límite* es la determinación compartida de ambos. Lo Finito es lo que está limitado por su frontera — *debe* ir más allá de la barrera, pero perece al hacerlo. La verdad de lo finito es su *idealidad*."
+    },
+    s09: {
+      en: "Being-for-self as One posits the Many, and in Attraction returns to itself. The One is the simple self-relation of the Many as sublated. The dialectic of Repulsion and Attraction is the process through which quantity arises.",
+      es: "El Ser-para-sí como Uno pone los Muchos, y en la Atracción retorna a sí mismo. El Uno es la simple autorrelación de los Muchos como superados. La dialéctica de la Repulsión y la Atracción es el proceso mediante el cual surge la cantidad."
+    },
+    s11: {
+      en: "Quantum is determinate quantity — a quantity with a limit or boundary. Number is the perfected form of Quantum: the unity of discrete and continuous magnitude. Degree is intensive magnitude — the qualitative aspect within quantity.",
+      es: "El Quantum es la cantidad determinada — una cantidad con un límite o frontera. El Número es la forma perfeccionada del Quantum: la unidad de la magnitud discreta y continua. El Grado es la magnitud intensiva — el aspecto cualitativo dentro de la cantidad."
+    },
+    w02: {
+      en: "Show (Schein) is the immediate moment of Essence — the shining of essence within itself. It is the immediacy that is *mediated* through its negation: what shows itself is not nothing but a positedness that is not self-standing. Show is the 'residue' of Being — but without independent subsistence.",
+      es: "La Apariencia (Schein) es el momento inmediato de la Esencia — el aparecer de la esencia en sí misma. Es la inmediatez que está *mediada* por su negación: lo que aparece no es nada sino un ser-puesto que no es autosuficiente. La Apariencia es el 'residuo' del Ser — pero sin subsistencia independiente."
+    },
+    w06: {
+      en: "Existence is the immediate emergence of the thing from its ground. The thing exists as the unity of ground and what is grounded. Existence is not mere abstract being but determinate, concrete presence: the thing with its properties, standing in relation to other things.",
+      es: "La Existencia es el surgimiento inmediato de la cosa desde su fundamento. La cosa existe como la unidad del fundamento y lo fundado. La Existencia no es mero ser abstracto sino presencia determinada y concreta."
+    },
+    w08: {
+      en: "The Essential Relation is the exhibited truth of Appearance — the explicit unity of the inner and the outer. It has three forms: (1) Whole and Parts; (2) Force and its Expression; (3) Inner and Outer.",
+      es: "La Relación Esencial es la verdad expuesta del Fenómeno — la unidad explícita de lo interior y lo exterior. Tiene tres formas: (1) Todo y Partes; (2) Fuerza y su Manifestación; (3) Interior y Exterior."
+    },
+    b02: {
+      en: "The Concept as such has three moments: Universality (the free self-identity of the concept), Particularity (the determinateness of the universal), and Individuality (the return of the particular into the universal — the concrete self).",
+      es: "El Concepto como tal tiene tres momentos: Universalidad (la libre autoidentidad del concepto), Particularidad (la determinación de lo universal) e Individualidad (el retorno de lo particular a lo universal — el yo concreto)."
     }
   },
 
-  // Quotes (EN / ES) — principal concepts only
+  // Quotes (EN / ES) — now complete for all concepts that have quotes in data.js
   quotes: {
     s01: {
       en: '"Being, pure being, — without any further determination. In its indeterminate immediacy it is equal only to itself, and also not unequal over against an other; it has no difference within it, nor any outwardly."',
@@ -213,13 +242,53 @@ const transData = {
       en: '"Being-for-self consists in having so gone beyond the barrier, beyond its otherness, that as this negation it is the infinite return into itself."',
       es: '"El Ser-para-sí consiste en haber ido más allá de la barrera, más allá de su alteridad, de modo que como esta negación es el retorno infinito a sí mismo."'
     },
+    s10: {
+      en: '"Quantity is the sublated determinateness of quality. The quantum is the indifferent limit; it is the determinateness that is equally an unrest and a going-outside-itself."',
+      es: '"La Cantidad es la determinación superada de la cualidad. El quantum es el límite indiferente; es la determinación que es igualmente un inquietud y un salir-fuera-de-sí."'
+    },
+    s12: {
+      en: '"Measure is the qualitative quantum, the specific quantum — a limit that is itself the determinateness of the something. The measureless is the destruction of a measure through its quantitative excess."',
+      es: '"La Medida es el quantum cualitativo, el quantum específico — un límite que es él mismo la determinación del algo. Lo desmedido es la destrucción de una medida por su exceso cuantitativo."'
+    },
+    s13: {
+      en: '"Absolute Indifference is the culmination of Being, where all determinateness is cancelled and preserved. The transition from Being to Essence occurs in the indifference that is both being and the negation of being."',
+      es: '"La Indiferencia Absoluta es la culminación del Ser, donde toda determinación está cancelada y preservada. La transición del Ser a la Esencia ocurre en la indiferencia que es tanto ser como negación del ser."'
+    },
     w01: {
       en: '"The Essence is Being\'s *past* — but past in a non-temporal sense. The truth of Being is Essence. Being has not ceased to be; rather, the Essence is Being that has sublated itself and entered into itself."',
       es: '"La Esencia es el *pasado* del Ser — pero pasado en un sentido no temporal. La verdad del Ser es la Esencia. El Ser no ha cesado de ser; más bien, la Esencia es el Ser que se ha superado a sí mismo y ha entrado en sí."'
     },
+    w02: {
+      en: '"Show is the determinateness of essence that is immediate in the sense of a sublated immediacy; it is the reflection of essence into itself, the self-related negativity."',
+      es: '"La Apariencia es la determinación de la esencia que es inmediata en el sentido de una inmediatez superada; es la reflexión de la esencia en sí misma, la negatividad autorreferente."'
+    },
+    w03: {
+      en: '"Reflection is the movement of essence through which it shows itself within itself; it is the shining of essence into itself, the return from otherness into itself."',
+      es: '"La Reflexión es el movimiento de la esencia mediante el cual se muestra a sí misma dentro de sí; es el aparecer de la esencia en sí misma, el retorno desde la alteridad a sí misma."'
+    },
+    w04: {
+      en: '"The determinations of reflection — Identity, Difference, and Ground — are not external forms applied to essence but the immanent self-determinations of essence itself."',
+      es: '"Las determinaciones de la reflexión — Identidad, Diferencia y Fundamento — no son formas externas aplicadas a la esencia sino las autodeterminaciones inmanentes de la esencia misma."'
+    },
+    w05: {
+      en: '"Ground is the unity of identity and difference, the truth of what has been determined in reflection. The thing issues from its ground, and the ground is its presupposition."',
+      es: '"El Fundamento es la unidad de identidad y diferencia, la verdad de lo que ha sido determinado en la reflexión. La cosa procede de su fundamento, y el fundamento es su presuposición."'
+    },
+    w07: {
+      en: '"Appearance is the essence that has gone forth into existence, the sphere of the phenomenon. The world of appearance is the counterpart of the essential world."',
+      es: '"El Fenómeno es la esencia que ha salido a la existencia, la esfera del fenómeno. El mundo de la apariencia es la contrapartida del mundo esencial."'
+    },
     w09: {
       en: '"Actuality is the unity of Essence and Appearance, of the inner and the outer. The sphere of Actuality is the exhibited unity of the inner and the outer, the Necessity that has become immediate."',
       es: '"La Realidad Efectiva es la unidad de la Esencia y el Fenómeno, de lo interior y lo exterior. La esfera de la Realidad Efectiva es la unidad expuesta de lo interior y lo exterior, la Necesidad que se ha vuelto inmediata."'
+    },
+    w11: {
+      en: '"Substantiality is the first modality of the absolute relation: the relation of substance and accidents. Substance is the subsisting power that differentiates itself into its accidents."',
+      es: '"La Sustancialidad es la primera modalidad de la relación absoluta: la relación de sustancia y accidentes. La Sustancia es el poder subsistente que se diferencia en sus accidentes."'
+    },
+    w12: {
+      en: '"Causality is the relation of cause and effect, the second modality of the absolute relation. The cause is the active substance that produces its effect, and in the effect the cause becomes itself."',
+      es: '"La Causalidad es la relación de causa y efecto, la segunda modalidad de la relación absoluta. La causa es la sustancia activa que produce su efecto, y en el efecto la causa deviene ella misma."'
     },
     w13: {
       en: '"Interaction is the positedness of Causality — that is, the necessity which in Cause and Effect falls apart into external determinations is in it posited as identity of both."',
@@ -228,6 +297,10 @@ const transData = {
     b01: {
       en: '"The Concept is the truth of Being and Essence, inasmuch as the showing (Schein) of reflection is itself independent and the positedness is reflected into itself."',
       es: '"El Concepto es la verdad del Ser y la Esencia, en cuanto el aparecer (Schein) de la reflexión es él mismo independiente y el ser-puesto está reflejado en sí mismo."'
+    },
+    b03: {
+      en: '"All things are a judgment — that is, they are singulars that have a universal nature as their inherent ground; or they are a universal that is self-particularizing."',
+      es: '"Todas las cosas son un juicio — esto es, son singulares que tienen una naturaleza universal como su fundamento inherente; o son un universal que se autoparticulariza."'
     },
     b07: {
       en: '"The Idea is the True in and for itself, the absolute unity of the Concept and Objectivity."',
