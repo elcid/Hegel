@@ -21,7 +21,7 @@ const hegelData = [
       },
       {
         "target": "Wesen",
-        "text": "Das Wesen ist das *vergangene*, zeitlos vergangene Sein. Das Sein ist die",
+        "text": "Das Wesen ist das *vergangene*, zeitlos vergangene Sein. Das Sein ist die unmittelbare Voraussetzung, aus der das Wesen *herkommt*.",
         "targetId": "w01"
       },
       {
@@ -83,7 +83,7 @@ const hegelData = [
       },
       {
         "target": "Begriff (Genesis)",
-        "text": "Wie das Werden die Genesis des Daseins, so ist die Wechselwirkung",
+        "text": "Wie das Werden die Genesis des Daseins, so ist die Wechselwirkung die Genesis des Begriffs.",
         "targetId": "b01"
       }
     ]
@@ -276,7 +276,7 @@ const hegelData = [
       },
       {
         "target": "Qualität",
-        "text": "Im Grad kehrt die Qualität zurück: die intensive Größe ist einfache",
+        "text": "Im Grad kehrt die Qualität zurück: die intensive Größe ist einfache Bestimmtheit.",
         "targetId": "s05"
       }
     ]
@@ -302,7 +302,7 @@ const hegelData = [
       },
       {
         "target": "Wesen",
-        "text": "Das Maßlose und der Umschlag der Maße führen zum *Werden des Wesens* — über",
+        "text": "Das Maßlose und der Umschlag der Maße führen zum *Werden des Wesens* — über die absolute Indifferenz.",
         "targetId": "w01"
       }
     ]
@@ -333,7 +333,7 @@ const hegelData = [
       },
       {
         "target": "Substanz",
-        "text": "Die absolute Indifferenz ähnelt der spinozistischen Substanz, bleibt aber",
+        "text": "Die absolute Indifferenz ähnelt der spinozistischen Substanz, bleibt aber in der Sphäre des Seins.",
         "targetId": "w11"
       }
     ]
@@ -354,7 +354,7 @@ const hegelData = [
       },
       {
         "target": "Begriff",
-        "text": "Das Wesen geht durch die Reflexion in den Begriff über. Der Begriff ist die",
+        "text": "Das Wesen geht durch die Reflexion in den Begriff über. Der Begriff ist die Wahrheit des Wesens (wie des Seins).",
         "targetId": "b01"
       },
       {
@@ -364,7 +364,7 @@ const hegelData = [
       },
       {
         "target": "Quantität",
-        "text": "Im Ganzen ist das Wesen das, was die Quantität in der Sphäre des Seins",
+        "text": "Im Ganzen ist das Wesen das, was die Quantität in der Sphäre des Seins war: absolute Gleichgültigkeit gegen die Grenze.",
         "targetId": "s10"
       }
     ]
@@ -467,7 +467,7 @@ const hegelData = [
       },
       {
         "target": "Werden (Seinslogik)",
-        "text": "Das Werden war der Widerspruch von Sein und Nichts — aber",
+        "text": "Das Werden war der Widerspruch von Sein und Nichts — aber noch in der Form der Unmittelbarkeit.",
         "targetId": "s03"
       }
     ]
@@ -519,7 +519,7 @@ const hegelData = [
       },
       {
         "target": "Erscheinung",
-        "text": "Die Existenz ist noch nicht Erscheinung; diese tritt erst hervor, wenn",
+        "text": "Die Existenz ist noch nicht Erscheinung; diese tritt erst hervor, wenn das Ding in Beziehung auf Anderes gesetzt wird.",
         "targetId": "w07"
       }
     ]
@@ -587,7 +587,7 @@ const hegelData = [
       },
       {
         "target": "Begriff",
-        "text": "Die Wirklichkeit in ihrer höchsten Form (Wechselwirkung) ist die Genesis",
+        "text": "Die Wirklichkeit in ihrer höchsten Form (Wechselwirkung) ist die Genesis des Begriffs.",
         "targetId": "b01"
       }
     ]
@@ -686,7 +686,7 @@ const hegelData = [
       },
       {
         "target": "Freiheit",
-        "text": "In der Wechselwirkung zeigt sich die Freiheit als die Wahrheit der",
+        "text": "In der Wechselwirkung zeigt sich die Freiheit als die Wahrheit der Notwendigkeit.",
         "targetId": null
       }
     ]
@@ -707,7 +707,7 @@ const hegelData = [
       },
       {
         "target": "Substanz",
-        "text": "Die Substanz ist die unmittelbare Voraussetzung des Begriffs; der Begriff",
+        "text": "Die Substanz ist die unmittelbare Voraussetzung des Begriffs; der Begriff ist die Wahrheit der Substanz.",
         "targetId": "w11"
       },
       {
@@ -729,11 +729,11 @@ const hegelData = [
     "bookName": "Begriffslogik",
     "position": "Erstes Kapitel.",
     "quote": "",
-    "definition": "- Das **Allgemeine** ist die einfache, sich auf sich beziehende Einheit des Begriffs.\n- Das **Besondere** ist die Bestimmtheit des Allgemeinen — es ist *in* ihm enthalten.\n- Das **Einzelne** ist die konkrete Einheit von Allgemeinheit und Besonderheit — der Begriff\n  als dieser.",
+    "definition": "- Das **Allgemeine** ist die einfache, sich auf sich beziehende Einheit des Begriffs.\n- Das **Besondere** ist die Bestimmtheit des Allgemeinen — es ist *in* ihm enthalten.\n- Das **Einzelne** ist die konkrete Einheit von Allgemeinheit und Besonderheit — der Begriff als dieser.",
     "crossRefs": [
       {
         "target": "Urteil",
-        "text": "Im Urteil treten diese Momente auseinander (Subjekt = Einzelnes, Prädikat =",
+        "text": "Im Urteil treten diese Momente auseinander (Subjekt = Einzelnes, Prädikat = Allgemeines).",
         "targetId": "b03"
       },
       {
@@ -848,7 +848,7 @@ const hegelData = [
       },
       {
         "target": "Wirklichkeit",
-        "text": "Die Idee ist die *wahre* Wirklichkeit — gegenüber der bloß",
+        "text": "Die Idee ist die *wahre* Wirklichkeit — gegenüber der bloß wesenslogischen Wirklichkeit.",
         "targetId": "w09"
       }
     ]
@@ -869,7 +869,7 @@ const hegelData = [
       },
       {
         "target": "Erkennen",
-        "text": "Das Leben stirbt und geht ins Erkennen über — der Geist erhebt sich über",
+        "text": "Das Leben stirbt und geht ins Erkennen über — der Geist erhebt sich über das Leben.",
         "targetId": "b09"
       }
     ]
@@ -906,7 +906,7 @@ const hegelData = [
     "crossRefs": [
       {
         "target": "Sein",
-        "text": "Die absolute Idee kehrt zum Sein zurück — aber als begriffenes Sein (der",
+        "text": "Die absolute Idee kehrt zum Sein zurück — aber als begriffenes Sein (der Übergang zur Naturphilosophie).",
         "targetId": "s01"
       },
       {

@@ -45,8 +45,7 @@ Bestimmungslose ist es in der Tat dasselbe wie das Nichts.
 **Querverweise:**
 - → **Nichts**: Das reine Sein und das reine Nichts sind *dasselbe*.
 - → **Werden**: Die Wahrheit des Seins (und des Nichts) ist das Werden.
-- → **Wesen**: Das Wesen ist das *vergangene*, zeitlos vergangene Sein. Das Sein ist die
-  unmittelbare Voraussetzung, aus der das Wesen *herkommt*.
+- → **Wesen**: Das Wesen ist das *vergangene*, zeitlos vergangene Sein. Das Sein ist die unmittelbare Voraussetzung, aus der das Wesen *herkommt*.
 - → **Begriff**: Der Begriff ist die *Wahrheit* des Seins und des Wesens.
 
 ---
@@ -87,8 +86,7 @@ resultiert im Dasein.
 - → **Sein / Nichts**: Das Werden ist deren Wahrheit.
 - → **Dasein**: Aus dem Werden geht das Dasein *hervor*. Die Vermittlung liegt hinter ihm.
 - → **Aufheben**: Das Werden ist der erste und paradigmatische Akt des *Aufhebens*.
-- → **Begriff (Genesis)**: Wie das Werden die Genesis des Daseins, so ist die Wechselwirkung
-  die Genesis des Begriffs.
+- → **Begriff (Genesis)**: Wie das Werden die Genesis des Daseins, so ist die Wechselwirkung die Genesis des Begriffs.
 
 ---
 
@@ -229,8 +227,7 @@ hinausweist.
 
 **Querverweise:**
 - → **Maß**: Das spezifische Quantum ist der Übergang zum Maß.
-- → **Qualität**: Im Grad kehrt die Qualität zurück: die intensive Größe ist einfache
-  Bestimmtheit.
+- → **Qualität**: Im Grad kehrt die Qualität zurück: die intensive Größe ist einfache Bestimmtheit.
 
 ---
 
@@ -251,8 +248,7 @@ in dem das Maß zugrunde geht und der Übergang zum Wesen sich vorbereitet.
 **Querverweise:**
 - → **Qualität / Quantität**: Das Maß ist deren synthetische Einheit.
 - → **Absolute Indifferenz**: Der letzte Umschlagspunkt vor dem Übergang ins Wesen.
-- → **Wesen**: Das Maßlose und der Umschlag der Maße führen zum *Werden des Wesens* — über
-  die absolute Indifferenz.
+- → **Wesen**: Das Maßlose und der Umschlag der Maße führen zum *Werden des Wesens* — über die absolute Indifferenz.
 
 ---
 
@@ -275,8 +271,7 @@ Indifferenz missverstanden werden kann.
 - → **Wesen**: Die absolute Indifferenz ist der unmittelbare *Übergang in das Wesen*.
 - → **Maß**: Die Aufhebung des Maßes führt zur absoluten Indifferenz.
 - → **Werden**: Wie das Werden aus dem Widerspruch von Sein und Nichts, so geht das Wesen aus der Auflösung des Maßes in der absoluten Indifferenz hervor.
-- → **Substanz**: Die absolute Indifferenz ähnelt der spinozistischen Substanz, bleibt aber
-  in der Sphäre des Seins.
+- → **Substanz**: Die absolute Indifferenz ähnelt der spinozistischen Substanz, bleibt aber in der Sphäre des Seins.
 
 ---
 
@@ -300,11 +295,9 @@ des Seins und die Vorbereitung des Begriffs.
 
 **Querverweise:**
 - → **Sein**: Wahrheit des Seins; das Sein ist die unmittelbare Voraussetzung des Wesens.
-- → **Begriff**: Das Wesen geht durch die Reflexion in den Begriff über. Der Begriff ist die
-  Wahrheit des Wesens (wie des Seins).
+- → **Begriff**: Das Wesen geht durch die Reflexion in den Begriff über. Der Begriff ist die Wahrheit des Wesens (wie des Seins).
 - → **Reflexion**: Das Wesen *ist* wesentlich Reflexion — Scheinen in sich selbst.
-- → **Quantität**: Im Ganzen ist das Wesen das, was die Quantität in der Sphäre des Seins
-  war: absolute Gleichgültigkeit gegen die Grenze.
+- → **Quantität**: Im Ganzen ist das Wesen das, was die Quantität in der Sphäre des Seins war: absolute Gleichgültigkeit gegen die Grenze.
 
 ---
 
@@ -395,8 +388,7 @@ sich nicht in Nichts auf, sondern geht in den *Grund* über — er „geht zu Gr
 **Querverweise:**
 - → **Identität / Unterschied**: Diese sind die Momente, die im Widerspruch zusammenfallen.
 - → **Grund**: Der Widerspruch hebt sich in den Grund auf.
-- → **Werden (Seinslogik)**: Das Werden war der Widerspruch von Sein und Nichts — aber
-  noch in der Form der Unmittelbarkeit.
+- → **Werden (Seinslogik)**: Das Werden war der Widerspruch von Sein und Nichts — aber noch in der Form der Unmittelbarkeit.
 
 ---
 
@@ -427,8 +419,7 @@ begründete Sein. Das Existierende ist *Ding* — die Einheit von Materie und Fo
 **Querverweise:**
 - → **Grund**: Der Grund entlässt sich in die Existenz.
 - → **Ding**: Die Existenz als Ding mit Eigenschaften.
-- → **Erscheinung**: Die Existenz ist noch nicht Erscheinung; diese tritt erst hervor, wenn
-  das Ding in Beziehung auf Anderes gesetzt wird.
+- → **Erscheinung**: Die Existenz ist noch nicht Erscheinung; diese tritt erst hervor, wenn das Ding in Beziehung auf Anderes gesetzt wird.
 
 ---
 
@@ -482,8 +473,7 @@ Wirklichkeit im engeren Sinne mit den Modalitäten: *Zufälligkeit*, *relative N
 
 **Querverweise:**
 - → **Wesen / Erscheinung**: Die Wirklichkeit ist deren Synthesis.
-- → **Begriff**: Die Wirklichkeit in ihrer höchsten Form (Wechselwirkung) ist die Genesis
-  des Begriffs.
+- → **Begriff**: Die Wirklichkeit in ihrer höchsten Form (Wechselwirkung) ist die Genesis des Begriffs.
 
 ---
 
@@ -554,8 +544,7 @@ Wahrheit der Notwendigkeit.
 **Querverweise:**
 - → **Kausalität**: Die Wechselwirkung ist die aufgehobene Kausalität.
 - → **Begriff**: Die Wechselwirkung ist die *unmittelbare Genesis des Begriffs*.
-- → **Freiheit**: In der Wechselwirkung zeigt sich die Freiheit als die Wahrheit der
-  Notwendigkeit.
+- → **Freiheit**: In der Wechselwirkung zeigt sich die Freiheit als die Wahrheit der Notwendigkeit.
 
 ---
 
@@ -579,8 +568,7 @@ in die Momente: *Allgemeinheit, Besonderheit, Einzelheit*.
 
 **Querverweise:**
 - → **Sein / Wesen**: Der Begriff ist deren beider Wahrheit.
-- → **Substanz**: Die Substanz ist die unmittelbare Voraussetzung des Begriffs; der Begriff
-  ist die Wahrheit der Substanz.
+- → **Substanz**: Die Substanz ist die unmittelbare Voraussetzung des Begriffs; der Begriff ist die Wahrheit der Substanz.
 - → **Idee**: Der Begriff, der sich in der Objektivität realisiert, wird zur Idee.
 - → **Urteil / Schluss**: Der Begriff *ur-teilt* sich und schließt sich im Schluss wieder zusammen.
 
@@ -593,12 +581,10 @@ in die Momente: *Allgemeinheit, Besonderheit, Einzelheit*.
 **Definition:**
 - Das **Allgemeine** ist die einfache, sich auf sich beziehende Einheit des Begriffs.
 - Das **Besondere** ist die Bestimmtheit des Allgemeinen — es ist *in* ihm enthalten.
-- Das **Einzelne** ist die konkrete Einheit von Allgemeinheit und Besonderheit — der Begriff
-  als dieser.
+- Das **Einzelne** ist die konkrete Einheit von Allgemeinheit und Besonderheit — der Begriff als dieser.
 
 **Querverweise:**
-- → **Urteil**: Im Urteil treten diese Momente auseinander (Subjekt = Einzelnes, Prädikat =
-  Allgemeines).
+- → **Urteil**: Im Urteil treten diese Momente auseinander (Subjekt = Einzelnes, Prädikat = Allgemeines).
 - → **Schluss**: Im Schluss werden sie wieder zusammengeschlossen.
 
 ---
@@ -682,8 +668,7 @@ Wirkliche. Die Idee durchläuft drei Gestalten: *Leben*, *Erkennen* und *absolut
 **Querverweise:**
 - → **Begriff / Objektivität**: Die Idee ist deren absolute Einheit.
 - → **Sein / Wesen / Begriff**: Die Idee ist die Totalität der gesamten logischen Bewegung.
-- → **Wirklichkeit**: Die Idee ist die *wahre* Wirklichkeit — gegenüber der bloß
-  wesenslogischen Wirklichkeit.
+- → **Wirklichkeit**: Die Idee ist die *wahre* Wirklichkeit — gegenüber der bloß wesenslogischen Wirklichkeit.
 
 ---
 
@@ -698,8 +683,7 @@ Fortpflanzung als Rückkehr zur Allgemeinheit). Das Leben geht im Tod zum Erkenn
 
 **Querverweise:**
 - → **Idee**: Erste, unmittelbare Gestalt der Idee.
-- → **Erkennen**: Das Leben stirbt und geht ins Erkennen über — der Geist erhebt sich über
-  das Leben.
+- → **Erkennen**: Das Leben stirbt und geht ins Erkennen über — der Geist erhebt sich über das Leben.
 
 ---
 
@@ -736,8 +720,7 @@ sich selbst begreifende Absolute, die *reine Persönlichkeit*. Mit ihr schließt
 entlässt sich in die Natur.
 
 **Querverweise:**
-- → **Sein**: Die absolute Idee kehrt zum Sein zurück — aber als begriffenes Sein (der
-  Übergang zur Naturphilosophie).
+- → **Sein**: Die absolute Idee kehrt zum Sein zurück — aber als begriffenes Sein (der Übergang zur Naturphilosophie).
 - → **Alle vorhergehenden Begriffe**: Sie sind aufgehobene Momente der absoluten Idee.
 - → **Methode**: Die Methode ist das Bewusstsein der Form der inneren Selbstbewegung
   des Inhalts.
