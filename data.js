@@ -193,12 +193,12 @@ const hegelData = [
     "crossRefs": [
       {
         "target": "Qualität / Grenze",
-        "text": "Das Fürsichsein ist das Resultat der Dialektik von Etwas und",
+        "text": "Das Fürsichsein ist das Resultat der Dialektik von Etwas und Anderem, Endlichkeit und Unendlichkeit.",
         "targetId": "s05"
       },
       {
         "target": "Eins / Vieles",
-        "text": "Das Fürsichsein als Eins setzt das Viele, und in der Attraktion kehrt",
+        "text": "Das Fürsichsein als Eins setzt das Viele, und in der Attraktion kehrt das Viele zum Einen zurück.",
         "targetId": "s09"
       },
       {

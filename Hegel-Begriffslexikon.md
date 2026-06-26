@@ -172,10 +172,8 @@ alles Andere von sich ausschließt (Repulsion), aber in diesem Ausschließen das
 sein eigenes Moment setzt.
 
 **Querverweise:**
-- → **Qualität / Grenze**: Das Fürsichsein ist das Resultat der Dialektik von Etwas und
-  Anderem, Endlichkeit und Unendlichkeit.
-- → **Eins / Vieles**: Das Fürsichsein als Eins setzt das Viele, und in der Attraktion kehrt
-  das Viele zum Einen zurück.
+- → **Qualität / Grenze**: Das Fürsichsein ist das Resultat der Dialektik von Etwas und Anderem, Endlichkeit und Unendlichkeit.
+- → **Eins / Vieles**: Das Fürsichsein als Eins setzt das Viele, und in der Attraktion kehrt das Viele zum Einen zurück.
 - → **Quantität**: Das Eins ist das Prinzip der Quantität.
 
 ---
