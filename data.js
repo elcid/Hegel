@@ -634,7 +634,7 @@ const hegelData = [
       },
       {
         "target": "Begriff",
-        "text": "Die dialektische Bewegung der Substanz durch Kausalität und Wechselwirkung",
+        "text": "Die dialektische Bewegung der Substanz durch Kausalität und Wechselwirkung ist die Genesis des Begriffs. Der Begriff ist die *Wahrheit* der Substanz.",
         "targetId": "b01"
       }
     ]
@@ -916,7 +916,7 @@ const hegelData = [
       },
       {
         "target": "Methode",
-        "text": "Die Methode ist das Bewusstsein der Form der inneren Selbstbewegung",
+        "text": "Die Methode ist das Bewusstsein der Form der inneren Selbstbewegung des Inhalts.",
         "targetId": "b10"
       }
     ]

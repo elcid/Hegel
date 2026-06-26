@@ -505,8 +505,7 @@ Die Substanz ist die *Macht* über ihre Akzidenzen.
 **Querverweise:**
 - → **Akzidenz**: Das Akzidens hat kein eigenes Bestehen; es ist das Gesetztsein der Substanz.
 - → **Kausalität**: Die Substanz geht in das Kausalitätsverhältnis über: sie wird zur Ursache.
-- → **Begriff**: Die dialektische Bewegung der Substanz durch Kausalität und Wechselwirkung
-  ist die Genesis des Begriffs. Der Begriff ist die *Wahrheit* der Substanz.
+- → **Begriff**: Die dialektische Bewegung der Substanz durch Kausalität und Wechselwirkung ist die Genesis des Begriffs. Der Begriff ist die *Wahrheit* der Substanz.
 
 ---
 
@@ -722,8 +721,7 @@ entlässt sich in die Natur.
 **Querverweise:**
 - → **Sein**: Die absolute Idee kehrt zum Sein zurück — aber als begriffenes Sein (der Übergang zur Naturphilosophie).
 - → **Alle vorhergehenden Begriffe**: Sie sind aufgehobene Momente der absoluten Idee.
-- → **Methode**: Die Methode ist das Bewusstsein der Form der inneren Selbstbewegung
-  des Inhalts.
+- → **Methode**: Die Methode ist das Bewusstsein der Form der inneren Selbstbewegung des Inhalts.
 
 ---
 
