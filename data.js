@@ -333,7 +333,7 @@ const hegelData = [
       },
       {
         "target": "Substanz",
-        "text": "Die absolute Indifferenz ähnelt der spinozistischen Substanz, bleibt aber in der Sphäre des Seins.",
+        "text": "Die absolute Indifferenz ähnelt der spinozistischen Substanz, bleibt aber in der Sphäre des Seins und erreicht das Wesen noch nicht.",
         "targetId": "w11"
       }
     ]
