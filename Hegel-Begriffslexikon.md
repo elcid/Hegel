@@ -108,8 +108,7 @@ das Sein aufgenommen, sodass das Ganze in der Form der Unmittelbarkeit erscheint
 - → **Werden**: Das Dasein ist das Resultat des Werdens; das Werden liegt *hinter* ihm.
 - → **Qualität**: Die Bestimmtheit des Daseins ist die Qualität (Realität und Negation).
 - → **Etwas / Anderes**: Das Dasein als in sich reflektiert ist *Etwas*.
-- → **Wesen**: Das Dasein fällt in die Sphäre des Wesens zurück, wenn Wesentliches und
-  Unwesentliches unterschieden werden.
+- → **Wesen**: Das Dasein fällt in die Sphäre des Wesens zurück, wenn Wesentliches und Unwesentliches unterschieden werden.
 
 ---
 

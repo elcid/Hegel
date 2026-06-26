@@ -114,7 +114,7 @@ const hegelData = [
       },
       {
         "target": "Wesen",
-        "text": "Das Dasein fällt in die Sphäre des Wesens zurück, wenn Wesentliches und",
+        "text": "Das Dasein fällt in die Sphäre des Wesens zurück, wenn Wesentliches und Unwesentliches unterschieden werden.",
         "targetId": "w01"
       }
     ]
