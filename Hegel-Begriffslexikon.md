@@ -274,8 +274,7 @@ Indifferenz missverstanden werden kann.
 **Querverweise:**
 - → **Wesen**: Die absolute Indifferenz ist der unmittelbare *Übergang in das Wesen*.
 - → **Maß**: Die Aufhebung des Maßes führt zur absoluten Indifferenz.
-- → **Werden**: Wie das Werden aus dem Widerspruch von Sein und Nichts, so geht das Wesen
-  aus der Auflösung des Maßes in der absoluten Indifferenz hervor.
+- → **Werden**: Wie das Werden aus dem Widerspruch von Sein und Nichts, so geht das Wesen aus der Auflösung des Maßes in der absoluten Indifferenz hervor.
 - → **Substanz**: Die absolute Indifferenz ähnelt der spinozistischen Substanz, bleibt aber
   in der Sphäre des Seins.
 

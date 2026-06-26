@@ -328,7 +328,7 @@ const hegelData = [
       },
       {
         "target": "Werden",
-        "text": "Wie das Werden aus dem Widerspruch von Sein und Nichts, so geht das Wesen",
+        "text": "Wie das Werden aus dem Widerspruch von Sein und Nichts, so geht das Wesen aus der Auflösung des Maßes in der absoluten Indifferenz hervor.",
         "targetId": "s03"
       },
       {
