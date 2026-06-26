@@ -3,32 +3,32 @@ const transData = {
 
   // UI text
   ui: {
-    title: { en: "Hegel · The Science of Logic", es: "Hegel · La Ciencia de la Lógica" },
-    subtitle: { en: "Glossary of Concepts — Interactive Spiral Diagram of the Main Concepts", es: "Glosario de Conceptos — Diagrama Espiral Interactivo de los Conceptos Principales" },
-    seinslogik: { en: "Doctrine of Being", es: "Doctrina del Ser" },
-    wesenslogik: { en: "Doctrine of Essence", es: "Doctrina de la Esencia" },
-    begriffslogik: { en: "Doctrine of the Concept", es: "Doctrina del Concepto" },
-    legendHelp: { en: "Click: concept definition · Click edge: relation · Esc: close popup", es: "Clic: definición · Clic en línea: relación · Esc: cerrar ventana" },
-    graphLinksPng: { en: "PNG Diagram", es: "Diagrama PNG" },
-    graphLinksMermaid: { en: "Mermaid", es: "Mermaid" },
-    graphLinksPdf: { en: "Diagram PDF", es: "Diagrama PDF" },
-    graphLinksLexMd: { en: "Lexicon MD", es: "Léxico MD" },
-    graphLinksLexPdf: { en: "Lexicon PDF", es: "Léxico PDF" },
-    rpGoto: { en: "→ Go to the definition of the target concept", es: "→ Ir a la definición del concepto destino" },
-    footer: { en: "Source: G.W.F. Hegel, The Science of Logic I & II (Cambridge edition, tr. George di Giovanni).<br>Created with DeepSeek · 2026", es: "Fuente: G.W.F. Hegel, Ciencia de la Lógica I & II.<br>Creado con DeepSeek · 2026" },
+    title: { de: "Hegel · Wissenschaft der Logik", en: "Hegel · The Science of Logic", es: "Hegel · La Ciencia de la Lógica" },
+    subtitle: { de: "Begriffslexikon — Interaktives Diagramm der Hauptbegriffe", en: "Glossary of Concepts — Interactive Spiral Diagram of the Main Concepts", es: "Glosario de Conceptos — Diagrama Espiral Interactivo de los Conceptos Principales" },
+    seinslogik: { de: "Seinslogik", en: "Doctrine of Being", es: "Doctrina del Ser" },
+    wesenslogik: { de: "Wesenslogik", en: "Doctrine of Essence", es: "Doctrina de la Esencia" },
+    begriffslogik: { de: "Begriffslogik", en: "Doctrine of the Concept", es: "Doctrina del Concepto" },
+    legendHelp: { de: "Klick: Begriffsdefinition · Klick auf Linie: Beziehung · Esc: Popup schließen", en: "Click: concept definition · Click edge: relation · Esc: close popup", es: "Clic: definición · Clic en línea: relación · Esc: cerrar ventana" },
+    graphLinksPng: { de: "PNG-Diagramm", en: "PNG Diagram", es: "Diagrama PNG" },
+    graphLinksMermaid: { de: "Mermaid", en: "Mermaid", es: "Mermaid" },
+    graphLinksPdf: { de: "Diagramm PDF", en: "Diagram PDF", es: "Diagrama PDF" },
+    graphLinksLexMd: { de: "Lexikon MD", en: "Lexicon MD", es: "Léxico MD" },
+    graphLinksLexPdf: { de: "Lexikon PDF", en: "Lexicon PDF", es: "Léxico PDF" },
+    rpGoto: { de: "→ Zur Definition des Zielbegriffs", en: "→ Go to the definition of the target concept", es: "→ Ir a la definición del concepto destino" },
+    footer: { de: "Quelle: G.W.F. Hegel, Wissenschaft der Logik I & II.<br>Erstellt mit DeepSeek · 2026", en: "Source: G.W.F. Hegel, The Science of Logic I & II (Cambridge edition, tr. George di Giovanni).<br>Created with DeepSeek · 2026", es: "Fuente: G.W.F. Hegel, Ciencia de la Lógica I & II.<br>Creado con DeepSeek · 2026" },
     // Card labels
-    labelPosition: { en: "Position", es: "Posición" },
-    labelQuote: { en: "Original Quotation", es: "Cita Original" },
-    labelDefinition: { en: "Definition", es: "Definición" },
-    labelCrossRefs: { en: "Cross References", es: "Referencias Cruzadas" },
+    labelPosition: { de: "Position", en: "Position", es: "Posición" },
+    labelQuote: { de: "Originalzitat", en: "Original Quotation", es: "Cita Original" },
+    labelDefinition: { de: "Definition", en: "Definition", es: "Definición" },
+    labelCrossRefs: { de: "Querverweise", en: "Cross References", es: "Referencias Cruzadas" },
     // Edge labels
     edgeDialectic: { de: "Dialektischer Übergang", en: "Dialectical Transition", es: "Transición Dialéctica" },
     edgeIndifference: { de: "Übergang der Indifferenz ins Wesen", en: "Transition of Indifference into Essence", es: "Transición de la Indiferencia a la Esencia" },
     edgeGenesis: { de: "Genesis des Begriffs aus der Wechselwirkung", en: "Genesis of the Concept from Interaction", es: "Génesis del Concepto desde la Acción Recíproca" },
     // Book titles for card grid
-    bookSein: { en: "Book One: The Doctrine of Being", es: "Libro Primero: La Doctrina del Ser" },
-    bookWesen: { en: "Book Two: The Doctrine of Essence", es: "Libro Segundo: La Doctrina de la Esencia" },
-    bookBegriff: { en: "Book Three: The Doctrine of the Concept", es: "Libro Tercero: La Doctrina del Concepto" }
+    bookSein: { de: "Erstes Buch: Die Lehre vom Sein", en: "Book One: The Doctrine of Being", es: "Libro Primero: La Doctrina del Ser" },
+    bookWesen: { de: "Zweites Buch: Die Lehre vom Wesen", en: "Book Two: The Doctrine of Essence", es: "Libro Segundo: La Doctrina de la Esencia" },
+    bookBegriff: { de: "Drittes Buch: Die Lehre vom Begriff", en: "Book Three: The Doctrine of the Concept", es: "Libro Tercero: La Doctrina del Concepto" }
   },
 
   // Concept names (EN / ES) for ALL concepts
